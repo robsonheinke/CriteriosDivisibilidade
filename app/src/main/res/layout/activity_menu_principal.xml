@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_telas"
+    tools:context="heinke.criteriosdivisibilidade.activity.MenuPrincipal">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/fb_img"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="216dp"
+        />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="13dp"
+        android:id="@+id/nome_usuario"
+        android:text="nomeUsuario"
+        />
+
+    <ImageView
+        android:id="@+id/logo_login"
+        android:layout_width="250dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="53dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"/>
+
+    <TextView
+        android:id="@+id/nome_jogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nomeJogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        />
+
+    <TextView
+        android:id="@+id/desenvolvido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desenvolvido por Robson Heinke"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="530dp"
+        />
+
+    <Button
+        android:id="@+id/jogar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nome_jogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bordas_arredondadas"
+        android:text="Jogar" />
+
+
+    <Button
+        android:id="@+id/ranking"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/jogar"
+        android:layout_alignRight="@+id/jogar"
+        android:layout_below="@+id/jogar"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bordas_arredondadas"
+        android:text="Ranking" />
+
+    <Button
+        android:id="@+id/ajuda"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/ranking"
+        android:layout_alignRight="@+id/ranking"
+        android:layout_below="@+id/ranking"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bordas_arredondadas"
+        android:text="Ajuda" />
+
+    <Button
+        android:id="@+id/sair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ajuda"
+        android:layout_marginTop="5dp"
+        android:text="Sair"
+        android:background="@android:color/transparent"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

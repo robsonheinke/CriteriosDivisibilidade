@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "467841487712",
+    "firebase_url": "https://criterios-de-divisibilidade.firebaseio.com",
+    "project_id": "criterios-de-divisibilidade",
+    "storage_bucket": "criterios-de-divisibilidade.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467841487712:android:066b934a05814e1a",
+        "android_client_info": {
+          "package_name": "heinke.criteriosdivisibilidade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467841487712-p671bggutml09v9bdoh6clbbl4k57cvn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "heinke.criteriosdivisibilidade",
+            "certificate_hash": "687b1a82541bc1827f2abc8b5b9115060f2efc70"
+          }
+        },
+        {
+          "client_id": "467841487712-aaccn0gmekkgp249f7et80bkdnjduguh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNfHizGi8sAUX7s7MuCODV2F-qNA1CsH4"
+        },
+        {
+          "current_key": "AIzaSyAlCgcJGxwDFHZK4-gQExxjgh3EJZa3Ep4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "467841487712-aaccn0gmekkgp249f7et80bkdnjduguh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

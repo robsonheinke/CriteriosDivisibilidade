@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CriteriosDivisibilidade</string>
+    <string name="nomeJogo">Criterios de Divisibilidade</string>
+    <string name="desenvolvido">Desenvolvido por Robson Heinke</string>
+
+    <!--login facebook-->
+    <string name="facebook_app_id">151245868797371</string>
+    <string name="fb_login_protocol_scheme">fb151245868797371</string>
+
+    <!--botões de login-->
+    <string name="botaoFacebook">FACEBOOK</string>
+    <string name="botaoGoogle">GOOGLE</string>
+
+    <string name="continuar">Continue suas conquistas</string>
+    <string name="parabens">Parabéns\nVocê completou o nível </string>
+</resources>
