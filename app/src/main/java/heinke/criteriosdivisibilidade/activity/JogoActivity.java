@@ -2,9 +2,8 @@ package heinke.criteriosdivisibilidade.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -35,10 +34,10 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
     private ImageView logo;
 
     //controle do botoes acessados
-    private Boolean b01 = false, b02 = false, b03 = false, b04 = false, b05 = false
-                   ,b06 = false, b07 = false, b08 = false, b09 = false, b10 = false
-                   ,b11 = false, b12 = false, b13 = false, b14 = false, b15 = false
-                   ,b16 = false, b17 = false, b18 = false, b19 = false, b20 = false;
+    private Boolean b01 = true, b02 = true, b03 = true, b04 = true, b05 = true
+                   ,b06 = true, b07 = true, b08 = true, b09 = true, b10 = true
+                   ,b11 = true, b12 = true, b13 = true, b14 = true, b15 = true
+                   ,b16 = true, b17 = true, b18 = true, b19 = true, b20 = true;
 
     //cor dos botoes (verde certo e vermelho errado)
     private int certo = R.drawable.resposta_certo;
@@ -67,7 +66,7 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
         Intent intent = getIntent();
         usuario = (Usuario) intent.getSerializableExtra("Usuario");
         nivel = db.pesquisaNivelId(Integer.parseInt(usuario.getNivel()));
-        criterio = Integer.parseInt(nivel.getNivel())+1;
+        criterio = Integer.parseInt(nivel.getCriterio());
 
         inicializaItensTela();
         displayLogin(usuario.getImagem(),this,fotoUsuario);
@@ -98,17 +97,9 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
 
         numeros = gerarNumeros(criterio);
 
-        total = verificaQuantidadeDeNumerosCertos(numeros, Integer.parseInt(nivel.getNivel())+1);
-        if(total < 8)  {
-            numeros = corrigiMinMaxCertos(Integer.parseInt(nivel.getNivel()+1), total, numeros);
-            total = verificaQuantidadeDeNumerosCertos(numeros, Integer.parseInt(nivel.getNivel()));
-        }
-        else if(total > 12)   {
-            numeros = corrigiMinMaxCertos(Integer.parseInt(nivel.getNivel()+1), total, numeros);
-            total = verificaQuantidadeDeNumerosCertos(numeros, Integer.parseInt(nivel.getNivel())+1);
-        }
-        System.out.println("total="+total);
-        System.out.println("controle="+controle);
+        total = verificaQuantidadeDeNumerosCertos(numeros, criterio);
+
+        inicializarValoresBotoes();
     }
 
     private void inicializaItensTela(){
@@ -165,275 +156,316 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
         fotoUsuario = (ImageView) findViewById(R.id.img_usuario);
     }
 
+    private void inicializarValoresBotoes(){
+        pos01.setText(numeros[0]);
+        pos02.setText(numeros[1]);
+        pos03.setText(numeros[2]);
+        pos04.setText(numeros[3]);
+        pos05.setText(numeros[4]);
+        pos06.setText(numeros[5]);
+        pos07.setText(numeros[6]);
+        pos08.setText(numeros[7]);
+        pos09.setText(numeros[8]);
+        pos10.setText(numeros[9]);
+        pos11.setText(numeros[10]);
+        pos12.setText(numeros[11]);
+        pos13.setText(numeros[12]);
+        pos14.setText(numeros[13]);
+        pos15.setText(numeros[14]);
+        pos16.setText(numeros[15]);
+        pos17.setText(numeros[16]);
+        pos18.setText(numeros[17]);
+        pos19.setText(numeros[18]);
+        pos20.setText(numeros[19]);
+    }
+
     @Override
     public void onClick(View view) {
-        String str;
+        int str;
         switch (view.getId()) {
             case R.id.posicao_01:
-                if (!b01) {
-                    str = (String) pos01.getText();
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                if (b01) {
+                    str = Integer.parseInt((String) pos01.getText());
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos01.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos01.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b01 = true;
+                    b01 = false;
                 }
                 break;
             case R.id.posicao_02:
-                str = (String) pos02.getText();
-                if (!b02) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos02.getText());
+                if (b02) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos02.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos02.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b02 = true;
+                    b02 = false;
                 }
                 break;
             case R.id.posicao_03:
-                str = (String) pos03.getText();
-                if (!b03) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos03.getText());
+                if (b03) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos03.setBackground(getResources().getDrawable(certo, getTheme()));
                     } else {
                         pontuacao(false);
                         pos03.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b03 = true;
+                    b03 = false;
                 }
                 break;
             case R.id.posicao_04:
-                str = (String) pos04.getText();
-                if (!b04) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos04.getText());
+                if (b04) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos04.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos04.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b04 = true;
+                    b04 = false;
                 }
                 break;
             case R.id.posicao_05:
-                str = (String) pos05.getText();
-                if (!b05) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos05.getText());
+                if (b05) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos05.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos05.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b05 = true;
+                    b05 = false;
                 }
                 break;
             case R.id.posicao_06:
-                str = (String) pos06.getText();
-                if (!b06) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos06.getText());
+                if (b06) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos06.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos06.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b06 = true;
+                    b06 = false;
                 }
                 break;
             case R.id.posicao_07:
-                str = (String) pos07.getText();
-                if (!b07) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos07.getText());
+                if (b07) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos07.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos07.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b07 = true;
+                    b07 = false;
                 }
                 break;
             case R.id.posicao_08:
-                str = (String) pos08.getText();
-                if (!b08) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos08.getText());
+                if (b08) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos08.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos08.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b08 = true;
+                    b08 = false;
                 }
                 break;
             case R.id.posicao_09:
-                str = (String) pos09.getText();
-                if (!b09) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos09.getText());
+                if (b09) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos09.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos09.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b09 = true;
+                    b09 = false;
                 }
                 break;
             case R.id.posicao_10:
-                str = (String) pos10.getText();
-                if (!b10) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos10.getText());
+                if (b10) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos10.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos10.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b10 = true;
+                    b10 = false;
                 }
                 break;
             case R.id.posicao_11:
-                str = (String) pos11.getText();
-                if (!b11) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos11.getText());
+                if (b11) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos11.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos11.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b11 = true;
+                    b11 = false;
                 }
                 break;
             case R.id.posicao_12:
-                str = (String) pos12.getText();
-                if (!b12) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos12.getText());
+                if (b12) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos12.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos12.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b12 = true;
+                    b12 = false;
                 }
                 break;
             case R.id.posicao_13:
-                str = (String) pos13.getText();
-                if (!b13) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos13.getText());
+                if (b13) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos13.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos13.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b13 = true;
+                    b13 = false;
                 }
                 break;
             case R.id.posicao_14:
-                str = (String) pos14.getText();
-                if (!b14) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos14.getText());
+                if (b14) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos14.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos14.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b14 = true;
+                    b14 = false;
                 }
                 break;
             case R.id.posicao_15:
-                str = (String) pos15.getText();
-                if (!b15) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos15.getText());
+                if (b15) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos15.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos15.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b15 = true;
+                    b15 = false;
                 }
                 break;
             case R.id.posicao_16:
-                str = (String) pos16.getText();
-                if (!b16) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos16.getText());
+                if (b16) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos16.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos16.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b16 = true;
+                    b16 = false;
                 }
                 break;
             case R.id.posicao_17:
-                str = (String) pos17.getText();
-                if (!b17) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos17.getText());
+                if (b17) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos17.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos17.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b17 = true;
+                    b17 = false;
                 }
                 break;
             case R.id.posicao_18:
-                str = (String) pos18.getText();
-                if (!b18) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos18.getText());
+                if (b18) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos18.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos18.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b18 = true;
+                    b18 = false;
                 }
                 break;
             case R.id.posicao_19:
-                str = (String) pos19.getText();
-                if (!b19) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos19.getText());
+                if (b19) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos19.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos19.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b19 = true;
+                    b19 = false;
                 }
                 break;
             case R.id.posicao_20:
-                str = (String) pos20.getText();
-                if (!b20) {
-                    if (verificaResultado(Integer.parseInt(str), Integer.parseInt(nivel.getNivel()))) {
+                str = Integer.parseInt((String) pos20.getText());
+                if (b20) {
+                    if (verificaResultado(str, criterio)) {
                         pontuacao(true);
                         pos20.setBackground(getResources().getDrawable(certo, getTheme()));
-                    } else {
+                    }
+                    else {
                         pontuacao(false);
                         pos20.setBackground(getResources().getDrawable(errado, getTheme()));
                     }
-                    b20 = true;
+                    b20 = false;
                 }
                 break;
         }
         if(controle == total){
             fimDoNivel(usuario,(String) tempo.getText(),(String) pontos.getText());
         }
-        System.out.println("controle="+controle);
     }
 
     public void pontuacao(Boolean respostaCerta){
@@ -453,31 +485,38 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
         int aux = Integer.parseInt(pontos);
         int somaTotal = 0;
 
+        somaTotal = aux + (tempoRestante*10);
+        System.out.println("total="+somaTotal);
+
         if(tempoRestante > 0){
-            Toast.makeText(this,"completei o nivel e sobrou tempo",Toast.LENGTH_LONG).show();
-            somaTotal = aux + (tempoRestante*10);
-            verificaCronometro = false;
-            novaTela(usuario, 3, this,Integer.parseInt(pontos));
+            novaTela(usuario, 3, this, somaTotal);
         }
         else{
             if(controle >= (total*0.7)){
-                Toast.makeText(this,"terminou o tempo mas acertei 70%",Toast.LENGTH_LONG).show();
-                novaTela(usuario, 3, this,Integer.parseInt(pontos));
+                novaTela(usuario, 3, this, somaTotal);
             }
             else{
                 Toast.makeText(this,"nao deu tempo :(",Toast.LENGTH_LONG).show();
-                //novaTela(usr, 0, RepetirNivel.class);
+                //novaTela(usuario, 4, this, 0);
             }
         }
     }
 
     @Override
-    public void onBackPressed(){
-        super.onBackPressed();
+    protected void onPause(){
+        super.onPause();
         verificaCronometro = false;
         cronometro.onFinish();
         finish();
     }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        novaTela(usuario,1,this,0);
+        finish();
+    }
+
     private String getCorretcTimer(boolean minutos, long mSegundos){
         String aux;
         int constCalendar = minutos ? Calendar.MINUTE : Calendar.SECOND;

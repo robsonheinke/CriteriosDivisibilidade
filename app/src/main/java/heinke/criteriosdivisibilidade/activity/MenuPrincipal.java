@@ -66,4 +66,10 @@ public class MenuPrincipal extends Utilitarios implements View.OnClickListener {
                 break;
         }
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        finish();
+    }
 }

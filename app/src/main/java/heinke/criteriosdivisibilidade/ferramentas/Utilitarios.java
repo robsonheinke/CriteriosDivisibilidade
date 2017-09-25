@@ -18,6 +18,8 @@ import android.support.design.widget.Snackbar;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 import heinke.criteriosdivisibilidade.activity.JogoActivity;
@@ -70,8 +72,6 @@ public class Utilitarios extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-
     protected void openProgressBar(){
         progressBar.setVisibility( View.VISIBLE );
     }
@@ -104,111 +104,76 @@ public class Utilitarios extends AppCompatActivity {
         });
     }
 
-    public int gerarNumeroAleatorio(int max){
-        Random random = new Random();
-        return random.nextInt(max);
-    }
-
     public Boolean verificaResultado(int resposta, int criterio){
-        return resposta % criterio == 0 ? true : false;
+        return resposta % criterio == 0;
     }
 
     public String[] gerarNumeros(int criterio){
-        System.out.println("to dentro da funcao");
-        String NUMEROS = "0123456789";
-        String [] numeros = new String[20];
-        char a , b;
-        int i, j;
+        ArrayList<Integer> numeros = new ArrayList<>();
+        int i = 2, j = 0, z = 2;
+        int controle = 0;
+        int aux;
 
-        for(int z = 0; z < 20; z++){
-            i = gerarNumeroAleatorio(10);
-            j = 0;
-            if(i == 0){
-                while (j == 0) j = gerarNumeroAleatorio(10);
-            }
-            else{
-                j = gerarNumeroAleatorio(10);
-            }
-
-            a = NUMEROS.charAt(i);
-            b = NUMEROS.charAt(j);
-
-
-            numeros[z] = ""+a + b;
+        for (i = 2; i < 100; i++) {
+            numeros.add(i);
         }
-        return verificaNumerosRepetidos(criterio, numeros) ? numeros : corrigiNumerosRepetidos(criterio, numeros);
-    }
 
-    public Boolean verificaNumerosRepetidos (int criterio, String[] numeros){
-        int a, b;
-        for(int i = 0; i < 20; i++){
-            a = Integer.parseInt(numeros[i]);
-            for(int j = 0; j < 20; j++){
-                b = Integer.parseInt(numeros[j]);
-                if(i != j){
-                    if(a == b){
-                        return false;
+        Collections.shuffle(numeros);
+
+        for(i=0; i < 20; i++) {
+            if (numeros.get(i) % criterio == 0) {
+                controle++;
+            }
+        }
+
+        i=0;
+        while (controle < 9 && i < 20) {
+            if (numeros.get(i) % criterio != 0) {
+                for (j = i; j<98; j++) {
+                    if (numeros.get(j) % criterio == 0 && j >= 20) {
+                        aux = numeros.get(i);
+                        numeros.set(i, numeros.get(j));
+                        numeros.set(j, aux);
+                        controle++;
+                        break;
                     }
                 }
             }
+            i+=z;
+            if(z==2)    z++;
+            else    z--;
         }
-        return true;
-    }
 
-    public String[] corrigiNumerosRepetidos (int criterio, String[] numeros){
-        int a, b;
-        for(int i = 0; i < 20; i++){
-            a = Integer.parseInt(numeros[i]);
-            for(int j = 0; j < 20; j++){
-                b = Integer.parseInt(numeros[j]);
-                if(i != j){
-                    if(a == b){
-                        a++;
+        i=0;
+        while (controle > 12 && i < 20) {
+            if (numeros.get(i) % criterio == 0) {
+                for (j = i; j < 98; j++) {
+                    if (numeros.get(j) % criterio != 0 && j >= 20) {
+                        aux = numeros.get(i);
+                        numeros.set(i, numeros.get(j));
+                        numeros.set(j, aux);
+                        controle--;
+                        break;
                     }
                 }
-                numeros[i] = Integer.toString(a);
             }
+            i+=z;
+            if(z==2)    z++;
+            else    z--;
         }
-        return numeros;
-    }
 
-    public String[] corrigiMinMaxCertos(int criterios, int total, String[] numeros){
-        int min = 8,max = 12;
-        int i = 0, aux = Integer.parseInt(numeros[i]);
-
-        if(total < min){
-            while(total < min){
-                if(!verificaResultado(aux, criterios)){
-                    while(!verificaNumerosRepetidos(aux,numeros)) aux++;
-                }
-                else{
-                    numeros[i] = Integer.toString(aux);
-                    total++;
-                    i++;
-                    aux = Integer.parseInt(numeros[i]);
-                }
-            }
+        String[] retorno = new String[20];
+        for(i=0; i < 20; i++){
+            retorno[i] = String.valueOf(numeros.get(i));
         }
-        if(total > max){
-            while(total > max) {
-                if (verificaResultado(aux, criterios)) {
-                    while (!verificaNumerosRepetidos(aux, numeros)) aux++;
-                } else {
-                    numeros[i] = Integer.toString(aux);
-                    total--;
-                    i++;
-                    aux = Integer.parseInt(numeros[i]);
-                }
-            }
-        }
-        return numeros;
+        return retorno;
     }
 
     public int verificaQuantidadeDeNumerosCertos(String[] numeros, int criterios){
         int cont = 0, aux;
         for(int i = 0; i < 20; i++){
             aux = Integer.parseInt(numeros[i]);
-            if(verificaResultado(aux,criterios))    cont++;
+            if(aux % criterios == 0)    cont++;
         }
         return cont;
     }

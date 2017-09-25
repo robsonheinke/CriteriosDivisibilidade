@@ -62,14 +62,15 @@
                     app:srcCompat="@drawable/com_facebook_button_icon_blue" />
 
             </RelativeLayout>
-            <ImageView
+            <ImageButton
                 android:id="@+id/mHome"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="15dp"
                 android:layout_toRightOf="@+id/pontosAN"
-                app:srcCompat="@drawable/home"/>
+                android:src="@drawable/home"
+                android:background="@drawable/fundo_telas"/>
 
         </TableRow>
     </TableLayout>
@@ -115,7 +116,7 @@
             android:textSize="20dp"
             android:layout_centerHorizontal="true"
             android:padding="5dp"
-            android:background="@color/botaoContinuar"/>
+            android:background="@drawable/bordas_arredondadas"/>
     </LinearLayout>
 
 </RelativeLayout>

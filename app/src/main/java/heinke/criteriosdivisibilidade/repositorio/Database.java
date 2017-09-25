@@ -32,6 +32,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String COLUNA_NIVEL = "nivel";
     private static final String COLUNA_ORDEM = "ordem";
     private static final String COLUNA_POSICAO_BOTAO = "posicao";
+    private static final String COLUNA_CRITERIO = "criterio";
 
     public Database(Context context) {
         super(context, NOME_DB, null, VERSAO_DB);
@@ -82,7 +83,8 @@ public class Database extends SQLiteOpenHelper {
         return "CREATE TABLE IF NOT EXISTS "+ TABELA_NIVEL + "("
                 + COLUNA_ID + " INTEGER PRIMARY KEY, "
                 + COLUNA_ORDEM + " TEXT, "
-                + COLUNA_NIVEL + " INTEGER)";
+                + COLUNA_NIVEL + " INTEGER, "
+                + COLUNA_CRITERIO +" INTEGER)";
     }
 
     private String createTableErro(){
@@ -100,6 +102,7 @@ public class Database extends SQLiteOpenHelper {
 
         valores.put(COLUNA_ORDEM, nivel.getOrdem());
         valores.put(COLUNA_NIVEL, nivel.getNivel());
+        valores.put(COLUNA_CRITERIO,nivel.getCriterio());
 
         db.insert(TABELA_NIVEL,null, valores);
 
@@ -118,7 +121,7 @@ public class Database extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String[] colunas = new String[]{COLUNA_ID,COLUNA_ORDEM,COLUNA_NIVEL};
+        String[] colunas = new String[]{COLUNA_ID,COLUNA_ORDEM,COLUNA_NIVEL,COLUNA_CRITERIO};
 
         Cursor cursor = db.query(TABELA_NIVEL,colunas,COLUNA_ID + "=" + id, null, null, null, null);
 
@@ -126,11 +129,7 @@ public class Database extends SQLiteOpenHelper {
             cursor.moveToFirst();
         }
 
-        System.out.println(cursor.getString(0));
-        System.out.println(cursor.getString(1));
-        System.out.println(cursor.getString(2));
-        Nivel nivel = new Nivel(cursor.getString(0),cursor.getString(1),cursor.getString(2));
-        System.out.println(nivel.toString());
+        Nivel nivel = new Nivel(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3));
         return nivel;
     }
 
@@ -164,6 +163,22 @@ public class Database extends SQLiteOpenHelper {
 
         db.insert(TABELA_USUARIO,null, valores);
 
+        db.close();
+    }
+
+    public void atualizarUsuario(Usuario usuario){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues valores = new ContentValues();
+
+        valores.put(COLUNA_NOME, usuario.getNome());
+        valores.put(COLUNA_EMAIL, usuario.getEmail());
+        valores.put(COLUNA_IMAGEM, usuario.getImagem());
+        valores.put(COLUNA_NIVEL, usuario.getNivel() == null ? 1 : Integer.parseInt(usuario.getNivel()));
+        valores.put(COLUNA_PONTOS, usuario.getPontos());
+        valores.put(COLUNA_IDFIREBASE,usuario.getIdFirebase());
+
+        db.update(TABELA_USUARIO,valores, COLUNA_IDFIREBASE + "= ?", new String[]{usuario.getIdFirebase()});
         db.close();
     }
 
