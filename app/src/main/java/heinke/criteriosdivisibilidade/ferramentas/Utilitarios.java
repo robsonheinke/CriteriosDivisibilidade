@@ -20,13 +20,13 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Random;
 
 import heinke.criteriosdivisibilidade.activity.JogoActivity;
 import heinke.criteriosdivisibilidade.activity.MenuPrincipal;
 import heinke.criteriosdivisibilidade.activity.PassarNivelActivity;
+import heinke.criteriosdivisibilidade.activity.Ranking;
+import heinke.criteriosdivisibilidade.activity.RepetirNivelActivity;
 import heinke.criteriosdivisibilidade.model.Usuario;
-import heinke.criteriosdivisibilidade.util.Database_Firebase;
 
 /**
  * Created by heinke on 03/09/17.
@@ -66,6 +66,10 @@ public class Utilitarios extends AppCompatActivity {
                 intent.putExtra("pontos",pontos);
                 break;
             case 4:     //menu principal para tela de ajuda
+                intent = new Intent(context, RepetirNivelActivity.class);
+                break;
+            case 5:     //menu principal para tela de ranking
+                intent = new Intent(context, Ranking.class);
                 break;
         }
         intent.putExtra("Usuario", usuario);

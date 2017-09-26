@@ -52,6 +52,13 @@ public class Usuario implements Serializable {
         this.idFirebase = firebase;
     }
 
+    public Usuario(String firebase, String _nome, int _nivel, String _pontos){
+        this.idFirebase = firebase;
+        this.nivel = String.valueOf(_nivel);
+        this.nome = _nome;
+        this.pontos = _pontos;
+    }
+
     public String getNome() {
         return nome;
     }

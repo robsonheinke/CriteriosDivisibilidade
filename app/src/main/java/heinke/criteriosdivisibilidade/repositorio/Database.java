@@ -22,6 +22,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String TABELA_USUARIO = "tb_usuario";
     private static final String TABELA_NIVEL = "tb_nivel";
     private static final String TABELA_ERRO = "tb_erro";
+    private static final String TABELA_RANKING = "tb_ranking";
 
     private static final String COLUNA_NOME = "nome";
     private static final String COLUNA_EMAIL = "email";
@@ -43,6 +44,7 @@ public class Database extends SQLiteOpenHelper {
         criarTabelaUsuario(sqlDB);
         criarTabelaErro(sqlDB);
         criarTabelaNivel(sqlDB);
+        criarTabelaRanking(sqlDB);
     }
 
     private void criarTabelaUsuario(SQLiteDatabase sqlDB){
@@ -59,6 +61,12 @@ public class Database extends SQLiteOpenHelper {
 
     private void criarTabelaErro(SQLiteDatabase sqlDB){
         String QUERY = createTableErro();
+
+        sqlDB.execSQL(QUERY);
+    }
+
+    private void criarTabelaRanking(SQLiteDatabase sqlDB){
+        String QUERY = createTableRanking();
 
         sqlDB.execSQL(QUERY);
     }
@@ -92,6 +100,14 @@ public class Database extends SQLiteOpenHelper {
                 + COLUNA_ID + " INTEGER PRIMARY KEY, "
                 + COLUNA_POSICAO_BOTAO + " INTEGER, "
                 + COLUNA_NIVEL + " INTEGER)";
+    }
+
+    private String createTableRanking(){
+        return "CREATE TABLE IF NOT EXISTS "+ TABELA_RANKING + "("
+                + COLUNA_ID + " INTEGER PRIMARY KEY, "
+                + COLUNA_NOME + " TEXT, "
+                + COLUNA_NIVEL + " INTEGER, "
+                + COLUNA_PONTOS + " TEXT)";
     }
 
     public void adicionarNiveis(Nivel nivel){

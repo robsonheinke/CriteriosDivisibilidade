@@ -497,7 +497,7 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
             }
             else{
                 Toast.makeText(this,"nao deu tempo :(",Toast.LENGTH_LONG).show();
-                //novaTela(usuario, 4, this, 0);
+                novaTela(usuario, 4, this, 0);
             }
         }
     }

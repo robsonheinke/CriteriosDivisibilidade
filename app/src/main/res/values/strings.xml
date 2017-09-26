@@ -13,4 +13,6 @@
 
     <string name="continuar">Continue suas conquistas</string>
     <string name="parabens">Parabéns\nVocê completou o nível </string>
+    <string name="perdeu">Tempo Esgotado!\nInfelizmente não deu.</string>
+    <string name="contPerder">Tente outra vez</string>
 </resources>

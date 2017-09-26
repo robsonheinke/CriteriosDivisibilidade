@@ -37,6 +37,7 @@ import heinke.criteriosdivisibilidade.ferramentas.Utilitarios;
 import heinke.criteriosdivisibilidade.model.Nivel;
 import heinke.criteriosdivisibilidade.model.Usuario;
 import heinke.criteriosdivisibilidade.repositorio.Database;
+import heinke.criteriosdivisibilidade.repositorio.Database_Firebase;
 
 public class LoginActivity extends Utilitarios implements View.OnClickListener
                                                          ,GoogleApiClient.OnConnectionFailedListener{
@@ -196,6 +197,7 @@ public class LoginActivity extends Utilitarios implements View.OnClickListener
     }
 
     private void login(FirebaseUser firebaseUser) {
+        Database_Firebase db_firebase = new Database_Firebase();
         if (firebaseUser != null) {
             String nome = firebaseUser.getDisplayName();
             String email = firebaseUser.getEmail();
@@ -208,6 +210,7 @@ public class LoginActivity extends Utilitarios implements View.OnClickListener
                 usuario = new Usuario(idFirebase, nome, email, imagem,"1","0");
                 db.adicionarUsuario(usuario);
             }
+            db_firebase.salvarUsuario(usuario);
             novaTela(usuario, 1, LoginActivity.this,0);
         }
     }

@@ -47,6 +47,7 @@ public class MenuPrincipal extends Utilitarios implements View.OnClickListener {
             jogar.setOnClickListener(this);
 
         ranking = (Button) findViewById(R.id.ranking);
+            ranking.setOnClickListener(this);
 
         ajuda = (Button) findViewById(R.id.ajuda);
 
@@ -64,6 +65,8 @@ public class MenuPrincipal extends Utilitarios implements View.OnClickListener {
             case R.id.jogar:
                 novaTela(usuario, 2,this,0);
                 break;
+            case R.id.ranking:
+                novaTela(usuario, 5, this,0);
         }
     }
 
