@@ -24,7 +24,7 @@ import java.util.Collections;
 import heinke.criteriosdivisibilidade.activity.JogoActivity;
 import heinke.criteriosdivisibilidade.activity.MenuPrincipal;
 import heinke.criteriosdivisibilidade.activity.PassarNivelActivity;
-import heinke.criteriosdivisibilidade.activity.Ranking;
+import heinke.criteriosdivisibilidade.activity.RankingActivity;
 import heinke.criteriosdivisibilidade.activity.RepetirNivelActivity;
 import heinke.criteriosdivisibilidade.model.Usuario;
 
@@ -69,7 +69,7 @@ public class Utilitarios extends AppCompatActivity {
                 intent = new Intent(context, RepetirNivelActivity.class);
                 break;
             case 5:     //menu principal para tela de ranking
-                intent = new Intent(context, Ranking.class);
+                intent = new Intent(context, RankingActivity.class);
                 break;
         }
         intent.putExtra("Usuario", usuario);

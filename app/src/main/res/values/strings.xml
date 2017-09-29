@@ -15,4 +15,6 @@
     <string name="parabens">Parabéns\nVocê completou o nível </string>
     <string name="perdeu">Tempo Esgotado!\nInfelizmente não deu.</string>
     <string name="contPerder">Tente outra vez</string>
+
+    <string name="comoJogar">Após entrar através de login pelo Facebook ou Google você irá clicar no botão "Jogar" onde dará ínicio ao jogo. Na tela do jogo estarão disponiveis a pontuação, tempo e o nivel. Caso você não consiga vencer o terá que repeti-lo novamente até vencer. No ranking terá a colocação e pontuação de todos os jogadores cadastrados.</string>
 </resources>

@@ -10,7 +10,7 @@ import heinke.criteriosdivisibilidade.ferramentas.Utilitarios;
 import heinke.criteriosdivisibilidade.model.Usuario;
 import heinke.criteriosdivisibilidade.repositorio.Database_Firebase;
 
-public class Ranking extends Utilitarios {
+public class RankingActivity extends Utilitarios {
 
     private Database_Firebase dbFirebase;
 
@@ -21,11 +21,7 @@ public class Ranking extends Utilitarios {
 
         dbFirebase = new Database_Firebase();
 
-
-        dbFirebase.pesquisarUsuarios();
-
-
-
+        dbFirebase.pesquisarUsuarios(this);
 
     }
 }

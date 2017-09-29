@@ -44,7 +44,8 @@
         <activity android:name=".activity.JogoActivity" />
         <activity android:name=".activity.PassarNivelActivity" />
         <activity android:name=".activity.RepetirNivelActivity" />
-        <activity android:name=".activity.Ranking"></activity>
+        <activity android:name=".activity.RankingActivity" />
+        <activity android:name=".activity.AjudaActivity"></activity>
     </application>
 
 </manifest>
