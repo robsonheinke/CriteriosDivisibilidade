@@ -17,14 +17,16 @@ import com.facebook.login.LoginManager;
 import heinke.criteriosdivisibilidade.R;
 import heinke.criteriosdivisibilidade.ferramentas.Utilitarios;
 import heinke.criteriosdivisibilidade.model.Usuario;
+import heinke.criteriosdivisibilidade.repositorio.Database_Firebase;
 
 @SuppressWarnings("WeakerAccess")
 public class MenuPrincipal extends Utilitarios implements View.OnClickListener {
 
-    private TextView login, sair, desenvolvido;
+    private TextView login, desenvolvido;
     private ImageView imagemLogin;
     private Button jogar, ranking, ajuda;
     private Usuario usuario;
+    private Database_Firebase dbFirebase = new Database_Firebase();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,17 +53,12 @@ public class MenuPrincipal extends Utilitarios implements View.OnClickListener {
 
         ajuda = (Button) findViewById(R.id.ajuda);
 
-        sair = (Button) findViewById(R.id.sair);
-            sair.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View v) {
+        dbFirebase.salvarUsuario(usuario);
         switch (v.getId()){
-            case R.id.sair:
-                super.onDestroy();
-                break;
             case R.id.jogar:
                 novaTela(usuario, 2,this,0);
                 break;
@@ -75,4 +72,5 @@ public class MenuPrincipal extends Utilitarios implements View.OnClickListener {
         super.onPause();
         finish();
     }
+
 }

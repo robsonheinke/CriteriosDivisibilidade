@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bordas"
+    android:orientation="vertical"
+    android:layout_margin="5dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titulo"
+        android:padding="10dp"
+        android:textSize="12dp"
+        android:text="Critérios de Divisibilidade"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:background="#80de68"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <TableRow>
+            <TextView
+                android:id="@+id/alert_pontosUsuario"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Meus Pontos:"
+                android:textSize="10dp"/>
+
+            <TextView
+                android:id="@+id/alert_meusPontos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="10dp"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/alert_pontosNivel"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pontos:"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/alert_meusPontosNivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="10dp" />
+        </TableRow>
+
+        <View
+            android:background="#80de68"
+            android:layout_width = "match_parent"
+            android:layout_height="2dp" />
+
+        <TableRow>
+            <TextView
+                android:id="@+id/alert_total"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15dp"
+                android:text="Total"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alert_meusPontosTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15dp"
+                android:text="0"
+                android:textStyle="bold"/>
+        </TableRow>
+    </TableLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:text="OK"
+        android:id="@+id/ok"
+        android:background="#80de68"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:textSize="10dp"
+        android:layout_margin="10dp"/>
+</LinearLayout>

@@ -7,32 +7,33 @@
     tools:context="heinke.criteriosdivisibilidade.activity.AjudaActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/cabecalho"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="1dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ranking"
-            android:textSize="50sp"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
             android:shadowColor="#000"
-            android:shadowDx="20"
-            android:shadowDy="20"
-            android:shadowRadius="12"
-            android:padding="12dp"/>
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="5"
+            android:padding="1dp"/>
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/logo"
+            android:layout_gravity="center_vertical"
             android:id="@+id/logo"/>
 
     </LinearLayout>
@@ -46,41 +47,41 @@
         android:id="@+id/cab_tabela">
 
         <TextView
-            android:layout_width="50dp"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="POS"
-            android:textSize="20dp"
+            android:textSize="10dp"
             android:textStyle="bold"
-            android:textAlignment="center" />
-
-        <TextView
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:text="USUARIO"
-            android:layout_marginTop="10dp"
-            android:id="@+id/nome_usuario"
-            android:textStyle="bold"
-            android:textSize="20dp"
             android:textAlignment="center" />
 
         <TextView
             android:layout_width="70dp"
             android:layout_height="wrap_content"
+            android:text="USUARIO"
+            android:layout_marginTop="10dp"
+            android:id="@+id/nome_usuario"
+            android:textStyle="bold"
+            android:textSize="10dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
             android:text="NIVEL"
             android:layout_marginTop="10dp"
             android:id="@+id/nivel"
-            android:textSize="20dp"
+            android:textSize="10dp"
             android:textStyle="bold"
             android:textAlignment="center" />
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="PONTOS"
             android:id="@+id/pontos"
-            android:textSize="20dp"
+            android:textSize="10dp"
             android:textStyle="bold"
             android:textAlignment="center"/>
 

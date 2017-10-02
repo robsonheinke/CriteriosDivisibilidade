@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_telas"
+    tools:context="heinke.criteriosdivisibilidade.activity.PassarNivelActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/TLcabecalhoAN">
+
+        <TableRow>
+            <!--AN no final da id referente a avança nivel -->
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@drawable/logo" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:background="#fff"
+                android:padding="10dp"
+                android:id="@+id/RL_jogo">
+
+
+                <TextView
+                    android:id="@+id/txt_pontosAN"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Pontos"
+                    android:textSize="25dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/pontosAN"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/txt_pontosAN"
+                    android:text="0"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:background="@drawable/fundo_telas"/>
+
+                <ImageView
+                    android:id="@+id/img_usuarioAN"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/pontosAN"
+                    app:srcCompat="@drawable/com_facebook_button_icon_blue" />
+
+            </RelativeLayout>
+            <ImageButton
+                android:id="@+id/mHome"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/pontosAN"
+                android:src="@drawable/home"
+                android:background="@drawable/fundo_telas"/>
+
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TLcabecalhoAN"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="20dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/parabens"
+            android:textSize="40dp"
+            android:id="@+id/parabens"
+            android:gravity="center"
+            android:layout_below="@+id/TLcabecalhoAN"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:srcCompat="@drawable/trofeu"
+            android:id="@+id/trofeu"
+            android:layout_below="@+id/parabens"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp" />
+
+        <Button
+            android:id="@+id/continuar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/continuar"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="40dp"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:background="@drawable/bordas_arredondadas"/>
+    </LinearLayout>
+
+</RelativeLayout>

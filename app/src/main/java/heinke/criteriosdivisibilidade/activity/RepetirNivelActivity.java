@@ -27,6 +27,9 @@ public class RepetirNivelActivity extends Utilitarios implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_repetir_nivel);
 
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         Intent intent = getIntent();
         usuario = (Usuario) intent.getSerializableExtra("Usuario");
 
@@ -48,12 +51,6 @@ public class RepetirNivelActivity extends Utilitarios implements View.OnClickLis
                 novaTela(usuario,2,this,0);
                 break;
         }
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        finish();
     }
 
     @Override

@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/logo_login"
             android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_marginTop="45dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="53dp"
             android:layout_alignParentTop="true"
             android:layout_gravity="center"
             android:src="@drawable/logo"/>
@@ -40,7 +40,7 @@
             android:orientation="vertical"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="60dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,13 +50,13 @@
                 android:layout_margin="4dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/logo_facebook"
                     android:background="#3b579d"/>
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="80dp"
                     android:id="@+id/botaoFacebook"
                     android:text="@string/botaoFacebook"
                     android:background="#3b579d"
@@ -78,19 +78,20 @@
                 android:layout_marginTop="25dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/logo_google"
                     android:background="#fff"/>
 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="80dp"
                     android:id="@+id/botaoGoogle"
                     android:text="@string/botaoGoogle"
                     android:background="#fff"
                     android:textSize="25dp"
                     android:textStyle="bold"
+
                     android:gravity="left|center_vertical"
                     android:paddingLeft="40dp"/>
 
@@ -104,7 +105,7 @@
             android:layout_height="wrap_content"
             android:text="@string/desenvolvido"
             android:layout_gravity="center"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="80dp"
             />
     </LinearLayout>
 

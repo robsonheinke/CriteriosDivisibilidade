@@ -59,7 +59,8 @@ public class LoginActivity extends Utilitarios implements View.OnClickListener
         super.onCreate(savedInstanceStatus);
         setContentView(R.layout.activity_login);
 
-
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         //inicia o firebase
         firebaseAuth = FirebaseAuth.getInstance();
@@ -198,6 +199,8 @@ public class LoginActivity extends Utilitarios implements View.OnClickListener
 
     private void login(FirebaseUser firebaseUser) {
         Database_Firebase db_firebase = new Database_Firebase();
+        db_firebase.pesquisarUsuarios(this);
+
         if (firebaseUser != null) {
             String nome = firebaseUser.getDisplayName();
             String email = firebaseUser.getEmail();

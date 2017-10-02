@@ -63,6 +63,9 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogo);
 
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+
         Intent intent = getIntent();
         usuario = (Usuario) intent.getSerializableExtra("Usuario");
         nivel = db.pesquisaNivelId(Integer.parseInt(usuario.getNivel()));

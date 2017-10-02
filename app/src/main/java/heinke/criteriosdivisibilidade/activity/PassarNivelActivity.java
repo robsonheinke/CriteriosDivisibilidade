@@ -15,6 +15,7 @@ import heinke.criteriosdivisibilidade.R;
 import heinke.criteriosdivisibilidade.ferramentas.Utilitarios;
 import heinke.criteriosdivisibilidade.model.Usuario;
 import heinke.criteriosdivisibilidade.repositorio.Database;
+import heinke.criteriosdivisibilidade.repositorio.Database_Firebase;
 
 public class PassarNivelActivity extends Utilitarios implements View.OnClickListener{
 
@@ -28,6 +29,7 @@ public class PassarNivelActivity extends Utilitarios implements View.OnClickList
     private int auxPontos;
 
     Database db = new Database(this);
+    Database_Firebase dbFirebase = new Database_Firebase();
 
     private TextView mPontos, nPontos,tPontos;
 
@@ -35,6 +37,9 @@ public class PassarNivelActivity extends Utilitarios implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_passar_nivel);
+
+        View decorView = getWindow().getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         Intent intent = getIntent();
 
@@ -110,15 +115,10 @@ public class PassarNivelActivity extends Utilitarios implements View.OnClickList
                 novaTela(usuario,1,this,0);
                 break;
             case R.id.continuar:
+                dbFirebase.salvarUsuario(usuario);
                 novaTela(usuario,2,this,0);
                 break;
         }
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        finish();
     }
 
     @Override

@@ -1,62 +1,45 @@
 package heinke.criteriosdivisibilidade.model;
 
+import android.content.Context;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import heinke.criteriosdivisibilidade.repositorio.Database;
+
 /**
  * Created by heinke on 26/09/17.
  */
 
 public class Ranking {
-    private String id;
-    private String idFirebase;
-    private String nome;
-    private String nivel;
-    private String pontos;
+    private Usuario usuario;
+    private String pos;
 
-    public Ranking(String idFirebase, String nome, String nivel, String pontos) {
-        this.idFirebase = idFirebase;
-        this.nome = nome;
-        this.nivel = nivel;
-        this.pontos = pontos;
+    public Ranking (Usuario _usuario, String _pos){
+        this.usuario = _usuario;
+        this.pos = _pos;
     }
 
     public Ranking (){ }
 
-    public String getId() {
-        return id;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUsuario(Usuario _usuario) {
+        this.usuario = _usuario;
     }
 
-    public String getIdFirebase() {
-        return idFirebase;
+    public String getPos() {
+        return pos;
     }
 
-    public void setIdFirebase(String idFirebase) {
-        this.idFirebase = idFirebase;
+    public void setPos(String _pos) {
+        this.pos = _pos;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(String nivel) {
-        this.nivel = nivel;
-    }
-
-    public String getPontos() {
-        return pontos;
-    }
-
-    public void setPontos(String pontos) {
-        this.pontos = pontos;
+    @Override
+    public String toString(){
+        return "pos: "+this.pos+"\tnome: "+ this.usuario.getNome() + "\tpontos: "+this.usuario.getPontos();
     }
 }

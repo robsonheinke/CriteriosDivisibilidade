@@ -47,7 +47,7 @@ public class Database_Firebase {
                 Database db = new Database(context);
                 for (DataSnapshot a: dataSnapshot.getChildren()) {
                     Usuario usuario = a.getValue(Usuario.class);
-                    db.atualizarRanking(usuario);
+                    db.controleRanking(usuario);
                 }
             }
             @Override

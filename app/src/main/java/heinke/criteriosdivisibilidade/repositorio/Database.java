@@ -3,7 +3,6 @@ package heinke.criteriosdivisibilidade.repositorio;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -25,7 +24,6 @@ public class Database extends SQLiteOpenHelper {
     private static final String TABELA_USUARIO = "tb_usuario";
     private static final String TABELA_NIVEL = "tb_nivel";
     private static final String TABELA_ERRO = "tb_erro";
-    private static final String TABELA_RANKING = "tb_ranking";
 
     private static final String COLUNA_NOME = "nome";
     private static final String COLUNA_EMAIL = "email";
@@ -47,7 +45,6 @@ public class Database extends SQLiteOpenHelper {
         criarTabelaUsuario(sqlDB);
         criarTabelaErro(sqlDB);
         criarTabelaNivel(sqlDB);
-        criarTabelaRanking(sqlDB);
     }
 
     private void criarTabelaUsuario(SQLiteDatabase sqlDB){
@@ -64,12 +61,6 @@ public class Database extends SQLiteOpenHelper {
 
     private void criarTabelaErro(SQLiteDatabase sqlDB){
         String QUERY = createTableErro();
-
-        sqlDB.execSQL(QUERY);
-    }
-
-    private void criarTabelaRanking(SQLiteDatabase sqlDB){
-        String QUERY = createTableRanking();
 
         sqlDB.execSQL(QUERY);
     }
@@ -103,15 +94,6 @@ public class Database extends SQLiteOpenHelper {
                 + COLUNA_ID + " INTEGER PRIMARY KEY, "
                 + COLUNA_POSICAO_BOTAO + " INTEGER, "
                 + COLUNA_NIVEL + " INTEGER)";
-    }
-
-    private String createTableRanking(){
-        return "CREATE TABLE IF NOT EXISTS "+ TABELA_RANKING + "("
-                + COLUNA_ID + " INTEGER PRIMARY KEY, "
-                + COLUNA_IDFIREBASE + " TEXT, "
-                + COLUNA_NOME + " TEXT, "
-                + COLUNA_NIVEL + " INTEGER, "
-                + COLUNA_PONTOS + " TEXT)";
     }
 
     public void adicionarNiveis(Nivel nivel){
@@ -202,6 +184,15 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void controleRanking(Usuario usuario){
+        if(contarUsuarioPorId(usuario.getIdFirebase()) > 0){
+            atualizarUsuario(usuario);
+        }
+        else{
+            adicionarUsuario(usuario);
+        }
+    }
+
     public Usuario pesquisaUsuarioIdFirebase(Usuario usuario){
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -245,58 +236,28 @@ public class Database extends SQLiteOpenHelper {
         return total;
     }
 
-    public int verificarSeUsuarioEstaNoRanking(String idFirebase){
+    public ArrayList<Ranking> pesquisarTopDez(){
+
+        ArrayList<Ranking> lista = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String sql = "SELECT COUNT(*) FROM "+ TABELA_RANKING + " WHERE " + COLUNA_IDFIREBASE + "='" + idFirebase +"'";
+        String SQL = "SELECT * FROM " + TABELA_USUARIO + " ORDER BY " + COLUNA_PONTOS + " DESC, " + COLUNA_NIVEL + " ASC LIMIT 10";
 
-        Cursor cursor = db.rawQuery(sql,null);
+        Cursor cursor = db.rawQuery(SQL, null);
 
-        if(cursor != null){
-            cursor.moveToFirst();
+        int i = 1;
+        while(cursor.moveToNext()){
+            Usuario usuario = new Usuario(String.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(COLUNA_ID)))
+                                           ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_IDFIREBASE))
+                                           ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_NOME))
+                                           ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_EMAIL))
+                                           ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_IMAGEM))
+                                           ,String.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(COLUNA_NIVEL)))
+                                           ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_PONTOS)));
+            Ranking ranking = new Ranking(usuario,String.valueOf(i));
+            lista.add(ranking);
+            i++;
         }
-
-        int total = cursor.getInt(0);
-
-        cursor.close();
-        return total;
-    }
-
-    public void inserirUsuariosRanking(Usuario usuario){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues valores = new ContentValues();
-
-        valores.put(COLUNA_IDFIREBASE, usuario.getIdFirebase());
-        valores.put(COLUNA_NOME, usuario.getNome());
-        valores.put(COLUNA_NIVEL, usuario.getNivel() == null ? 1 : Integer.parseInt(usuario.getNivel()));
-        valores.put(COLUNA_PONTOS, usuario.getPontos());
-
-        db.insert(TABELA_RANKING,null,valores);
-        db.close();
-    }
-
-    public void atualizarRanking(Usuario usuario){
-        if(verificarSeUsuarioEstaNoRanking(usuario.getIdFirebase()) > 0){
-            updateRanking(new Ranking(usuario.getIdFirebase(),usuario.getNome(),usuario.getNivel(),usuario.getPontos()));
-        }
-        else{
-        inserirUsuariosRanking(usuario);
-        }
-    }
-
-    private void updateRanking(Ranking ranking){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues valores = new ContentValues();
-
-        valores.put(COLUNA_IDFIREBASE, ranking.getIdFirebase());
-        valores.put(COLUNA_NOME, ranking.getNome());
-        valores.put(COLUNA_NIVEL, ranking.getNivel());
-        valores.put(COLUNA_PONTOS, ranking.getPontos());
-
-        db.update(TABELA_RANKING,valores, COLUNA_IDFIREBASE + "= ?",new String[]{ranking.getIdFirebase()});
-
-        db.close();
+        return lista;
     }
 }

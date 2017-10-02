@@ -7,7 +7,7 @@
     tools:context="heinke.criteriosdivisibilidade.activity.AjudaActivity">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/cabecalho"
@@ -24,15 +24,16 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
             android:shadowColor="#000"
-            android:shadowDx="20"
-            android:shadowDy="20"
-            android:shadowRadius="12"
+            android:shadowDx="10"
+            android:shadowDy="10"
+            android:shadowRadius="8"
             android:padding="12dp"/>
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/logo"
+            android:layout_marginLeft="40dp"
             android:id="@+id/logo"/>
 
     </LinearLayout>
@@ -43,6 +44,7 @@
         android:orientation="horizontal"
         android:background="@drawable/fundo_telas"
         android:layout_below="@+id/cabecalho"
+        android:layout_marginTop="15dp"
         android:id="@+id/cab_tabela">
 
         <TextView
@@ -50,37 +52,37 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="POS"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:textAlignment="center" />
 
         <TextView
-            android:layout_width="170dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:text="USUARIO"
             android:layout_marginTop="10dp"
             android:id="@+id/nome_usuario"
             android:textStyle="bold"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textAlignment="center" />
 
         <TextView
-            android:layout_width="70dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="NIVEL"
             android:layout_marginTop="10dp"
             android:id="@+id/nivel"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:textAlignment="center" />
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="PONTOS"
             android:id="@+id/pontos"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:textAlignment="center"/>
 

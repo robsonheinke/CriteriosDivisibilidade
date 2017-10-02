@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/fundo_telas"
     tools:context="heinke.criteriosdivisibilidade.activity.JogoActivity">
 
@@ -12,350 +13,367 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/TLcabecalho"
+        android:layout_gravity="center"
         android:gravity="center_horizontal">
 
         <TableRow
-            android:layout_margin="2dp">
+            android:layout_margin="1dp">
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="2dp"
                 app:srcCompat="@drawable/logo" />
 
             <RelativeLayout
-                android:layout_width="230dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:layout_gravity="center"
                 android:background="#fff"
                 android:id="@+id/RL_jogo">
 
 
                 <TextView
                     android:id="@+id/txt_pontos"
-                    android:layout_width="50dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
                     android:text="Pontos"
+                    android:textSize="8dp"
                     android:gravity="center" />
 
                 <TextView
                     android:id="@+id/pontos"
-                    android:layout_width="50dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
                     android:layout_below="@+id/txt_pontos"
                     android:text="0"
+                    android:textSize="8dp"
                     android:gravity="center"
                     android:background="@drawable/fundo_telas"/>
 
                 <TextView
                     android:id="@+id/txt_nivel"
-                    android:layout_width="50dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/txt_pontos"
                     android:layout_alignTop="@+id/txt_pontos"
                     android:text="Nível"
+                    android:textSize="8dp"
                     android:gravity="center" />
 
                 <TextView
                     android:id="@+id/nivel"
-                    android:layout_width="50dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/pontos"
                     android:layout_alignTop="@+id/pontos"
                     android:text="0"
                     android:layout_below="@+id/txt_nivel"
                     android:gravity="center"
+                    android:textSize="8dp"
                     android:background="@drawable/fundo_telas"/>
 
                 <TextView
                     android:id="@+id/txt_tempo"
-                    android:layout_width="50dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/txt_nivel"
                     android:layout_alignTop="@+id/txt_nivel"
                     android:text="Tempo"
+                    android:textSize="8dp"
                     android:gravity="center" />
 
                 <TextView
                     android:id="@+id/tempo"
-                    android:layout_width="50dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/nivel"
                     android:layout_alignTop="@+id/nivel"
                     android:gravity="center"
+                    android:text="00:00"
+                    android:textSize="8dp"
                     android:background="@drawable/fundo_telas"/>
 
             </RelativeLayout>
 
             <ImageView
                 android:id="@+id/img_usuario"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
                 app:srcCompat="@drawable/com_facebook_button_icon_blue" />
 
         </TableRow>
 
     </TableLayout>
 
-    <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:layout_below="@+id/TLcabecalho"
-        android:layout_marginTop="15dp"
-        android:background="#fff"
-        android:layout_centerHorizontal="true">
-        >
-
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
             android:id="@+id/ordem_nivel"
             android:text="ordem a ser executada no nivel"
             android:gravity="center"
-            android:textSize="12dp"/>
-
-    </RelativeLayout>
+            android:layout_marginTop="8dp"
+            android:textSize="8dp"/>
 
     <TableLayout
-        android:layout_marginTop="170dp"
-        android:layout_width="350dp"
-        android:layout_height="340dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_centerHorizontal="true">
 
         <TableRow
-            android:layout_margin="5dp"
-            android:padding="2dp"
+            android:layout_margin="2dp"
+            android:padding="1dp"
             android:gravity="center">
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="01"
                 android:id="@+id/posicao_01"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="02"
                 android:id="@+id/posicao_02"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="03"
                 android:id="@+id/posicao_03"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="04"
                 android:id="@+id/posicao_04"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
         </TableRow>
 
         <TableRow
-            android:layout_margin="5dp"
-            android:padding="2dp"
+            android:layout_margin="2dp"
+            android:padding="1dp"
             android:gravity="center">
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="05"
                 android:id="@+id/posicao_05"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="06"
                 android:id="@+id/posicao_06"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="07"
                 android:id="@+id/posicao_07"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="08"
                 android:id="@+id/posicao_08"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
         </TableRow>
 
         <TableRow
-            android:layout_margin="5dp"
-            android:padding="2dp"
+            android:layout_margin="2dp"
+            android:padding="1dp"
             android:gravity="center">
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="09"
                 android:id="@+id/posicao_09"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="10"
                 android:id="@+id/posicao_10"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="11"
                 android:id="@+id/posicao_11"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="12"
                 android:id="@+id/posicao_12"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
         </TableRow>
 
         <TableRow
-            android:layout_margin="5dp"
-            android:padding="2dp"
+            android:layout_margin="2dp"
+            android:padding="1dp"
             android:gravity="center">
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="13"
                 android:id="@+id/posicao_13"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="14"
                 android:id="@+id/posicao_14"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="15"
                 android:id="@+id/posicao_15"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="16"
                 android:id="@+id/posicao_16"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
         </TableRow>
 
         <TableRow
-            android:layout_margin="5dp"
-            android:padding="2dp"
+            android:layout_margin="2dp"
+            android:padding="1dp"
             android:gravity="center">
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="17"
                 android:id="@+id/posicao_17"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="18"
                 android:id="@+id/posicao_18"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="19"
                 android:id="@+id/posicao_19"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
             <Button
                 android:background="@drawable/circulos"
-                android:layout_height="50dp"
-                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
                 android:text="20"
                 android:id="@+id/posicao_20"
-                android:layout_marginLeft="25dp"
+                android:layout_marginLeft="10dp"
                 android:gravity="center"
-                android:textSize="12dp"/>
+                android:textSize="10dp"
+                android:textStyle="bold"/>
 
         </TableRow>
     </TableLayout>
@@ -365,7 +383,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/desenvolvido"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="540dp"
+        android:layout_gravity="center"
+        android:textSize="5dp"
+        android:layout_marginTop="10dp"
         />
-</RelativeLayout>
+</LinearLayout>
