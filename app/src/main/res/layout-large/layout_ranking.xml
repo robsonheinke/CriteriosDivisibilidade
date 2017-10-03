@@ -7,47 +7,50 @@
     android:id="@+id/tb_ranking">
 
     <TextView
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:id="@+id/AdaptPos"
         android:text="POS"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:textStyle="bold"
         android:textAlignment="center" />
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="10dp"
         android:id="@+id/AdaptImagem"
         android:src="@drawable/logocomfundo"/>
 
     <TextView
-        android:layout_width="120dp"
+        android:layout_width="135dp"
         android:layout_height="wrap_content"
         android:text="USUARIO"
         android:layout_marginTop="10dp"
         android:id="@+id/AdaptNome"
-        android:textSize="20dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
         android:textAlignment="center" />
 
     <TextView
-        android:layout_width="70dp"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:text="NIVEL"
         android:layout_marginTop="10dp"
         android:id="@+id/AdaptNivel"
-        android:textSize="20dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
         android:textAlignment="center" />
 
     <TextView
-        android:layout_width="80dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="PONTOS"
         android:id="@+id/AdaptPontos"
-        android:textSize="20dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
         android:textAlignment="center"/>
 
 </LinearLayout>

@@ -5,16 +5,16 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="-1dp"
         android:id="@+id/tabela">
 
         <TableRow>
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#C71585"
@@ -23,8 +23,8 @@
                 android:textStyle="bold"/>
 
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#1E90FF"
@@ -33,8 +33,8 @@
                 android:textStyle="bold"/>
 
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#228B22"
@@ -45,8 +45,8 @@
 
         <TableRow>
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#8B008B"
@@ -55,8 +55,8 @@
                 android:textStyle="bold"/>
 
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#B22222"
@@ -65,8 +65,8 @@
                 android:textStyle="bold"/>
 
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#0000CD"
@@ -77,8 +77,8 @@
 
         <TableRow>
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#FFD700"
@@ -87,8 +87,8 @@
                 android:textStyle="bold"/>
 
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#C0C0C0"
@@ -97,8 +97,8 @@
                 android:textStyle="bold"/>
 
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#FF4500"
@@ -124,8 +124,8 @@
             android:layout_marginLeft="40dp">
 
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#8B4513"
@@ -134,8 +134,8 @@
                 android:textStyle="bold"/>
 
             <Button
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/circulos"
                 android:backgroundTint="#98FB98"
