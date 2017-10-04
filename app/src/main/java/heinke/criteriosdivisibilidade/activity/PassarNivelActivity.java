@@ -127,4 +127,11 @@ public class PassarNivelActivity extends Utilitarios implements View.OnClickList
         novaTela(usuario,1,this,0);
         finish();
     }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        finish();
+    }
+
 }

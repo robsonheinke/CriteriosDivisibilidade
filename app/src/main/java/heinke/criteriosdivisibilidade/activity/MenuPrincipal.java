@@ -52,6 +52,7 @@ public class MenuPrincipal extends Utilitarios implements View.OnClickListener {
             ranking.setOnClickListener(this);
 
         ajuda = (Button) findViewById(R.id.ajuda);
+            ajuda.setOnClickListener(this);
 
     }
 
@@ -64,6 +65,10 @@ public class MenuPrincipal extends Utilitarios implements View.OnClickListener {
                 break;
             case R.id.ranking:
                 novaTela(usuario, 5, this,0);
+                break;
+            case R.id.ajuda:
+                novaTela(usuario, 6, this,0);
+                break;
         }
     }
 

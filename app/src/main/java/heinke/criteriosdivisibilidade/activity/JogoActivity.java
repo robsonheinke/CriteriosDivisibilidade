@@ -489,7 +489,6 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
         int somaTotal = 0;
 
         somaTotal = aux + (tempoRestante*10);
-        System.out.println("total="+somaTotal);
 
         if(tempoRestante > 0){
             novaTela(usuario, 3, this, somaTotal);
@@ -499,7 +498,6 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
                 novaTela(usuario, 3, this, somaTotal);
             }
             else{
-                Toast.makeText(this,"nao deu tempo :(",Toast.LENGTH_LONG).show();
                 novaTela(usuario, 4, this, 0);
             }
         }

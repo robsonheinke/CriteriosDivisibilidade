@@ -21,6 +21,7 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import heinke.criteriosdivisibilidade.activity.AjudaActivity;
 import heinke.criteriosdivisibilidade.activity.JogoActivity;
 import heinke.criteriosdivisibilidade.activity.MenuPrincipal;
 import heinke.criteriosdivisibilidade.activity.PassarNivelActivity;
@@ -70,6 +71,9 @@ public class Utilitarios extends AppCompatActivity {
                 break;
             case 5:     //menu principal para tela de ranking
                 intent = new Intent(context, RankingActivity.class);
+                break;
+            case 6:
+                intent = new Intent(context,AjudaActivity.class);
                 break;
         }
         intent.putExtra("Usuario", usuario);

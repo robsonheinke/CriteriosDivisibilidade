@@ -36,6 +36,7 @@ public class RepetirNivelActivity extends Utilitarios implements View.OnClickLis
         pontos = (TextView) findViewById(R.id.pontosAN);
             pontos.setText(usuario.getPontos());
         home = (ImageButton) findViewById(R.id.mHome);
+            home.setOnClickListener(this);
         imgUsuario = (ImageView) findViewById(R.id.img_usuarioAN);
         continuar = (Button) findViewById(R.id.continuar);
 
@@ -57,6 +58,13 @@ public class RepetirNivelActivity extends Utilitarios implements View.OnClickLis
     public void onBackPressed(){
         super.onBackPressed();
         novaTela(usuario,1,this,0);
+        finish();
+    }
+
+
+    @Override
+    protected void onPause(){
+        super.onPause();
         finish();
     }
 }
