@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
 
 import heinke.criteriosdivisibilidade.R;
 import heinke.criteriosdivisibilidade.ferramentas.Utilitarios;
@@ -24,7 +23,7 @@ public class CriteriosGeraisActivity extends Utilitarios implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajuda);
+        setContentView(R.layout.activity_criterios_geral);
 
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
@@ -32,39 +31,38 @@ public class CriteriosGeraisActivity extends Utilitarios implements View.OnClick
         Intent intent = getIntent();
         usuario = (Usuario) intent.getSerializableExtra("Usuario");
 
-        ajuda = (Button) findViewById(R.id.ajuda);
-            ajuda.setOnClickListener(this);
-        criterios = (Button) findViewById(R.id.criterios);
-            criterios.setOnClickListener(this);
-
-        cr2 = (Button)findViewById(R.id.botao2);
-        cr2.setOnClickListener(this);
-        cr3 = (Button)findViewById(R.id.botao3);
-        cr3.setOnClickListener(this);
-        cr4 = (Button)findViewById(R.id.botao4);
-        cr4.setOnClickListener(this);
-        cr5 = (Button)findViewById(R.id.botao5);
-        cr5.setOnClickListener(this);
-        cr6 = (Button)findViewById(R.id.botao6);
-        cr6.setOnClickListener(this);
-        cr7 = (Button)findViewById(R.id.botao7);
-        cr7.setOnClickListener(this);
-        cr8 = (Button)findViewById(R.id.botao8);
-        cr8.setOnClickListener(this);
-        cr9 = (Button)findViewById(R.id.botao9);
-        cr9.setOnClickListener(this);
-        cr10 = (Button)findViewById(R.id.botao10);
-        cr10.setOnClickListener(this);
-        cr11 = (Button)findViewById(R.id.botao11);
-        cr11.setOnClickListener(this);
-        cr12 = (Button)findViewById(R.id.botao12);
-        cr12.setOnClickListener(this);
-        //inicializaBotoes();
+        inicializaBotoes();
 
     }
 
     private void inicializaBotoes(){
+        cr2 = (Button)findViewById(R.id.botao2);
+            cr2.setOnClickListener(this);
+        cr3 = (Button)findViewById(R.id.botao3);
+            cr3.setOnClickListener(this);
+        cr4 = (Button)findViewById(R.id.botao4);
+            cr4.setOnClickListener(this);
+        cr5 = (Button)findViewById(R.id.botao5);
+            cr5.setOnClickListener(this);
+        cr6 = (Button)findViewById(R.id.botao6);
+            cr6.setOnClickListener(this);
+        cr7 = (Button)findViewById(R.id.botao7);
+            cr7.setOnClickListener(this);
+        cr8 = (Button)findViewById(R.id.botao8);
+            cr8.setOnClickListener(this);
+        cr9 = (Button)findViewById(R.id.botao9);
+            cr9.setOnClickListener(this);
+        cr10 = (Button)findViewById(R.id.botao10);
+            cr10.setOnClickListener(this);
+        cr11 = (Button)findViewById(R.id.botao11);
+            cr11.setOnClickListener(this);
+        cr12 = (Button)findViewById(R.id.botao12);
+            cr12.setOnClickListener(this);
 
+        ajuda = (Button) findViewById(R.id.ajuda);
+            ajuda.setOnClickListener(this);
+        criterios = (Button) findViewById(R.id.criterios);
+            criterios.setOnClickListener(this);
     }
 
     @Override
@@ -127,5 +125,4 @@ public class CriteriosGeraisActivity extends Utilitarios implements View.OnClick
         super.onPause();
         finish();
     }
-
 }

@@ -16,5 +16,58 @@
     <string name="perdeu">Tempo Esgotado!\nInfelizmente não deu.</string>
     <string name="contPerder">Tente outra vez</string>
 
-    <string name="comoJogar">Após entrar através de login pelo Facebook ou Google você irá clicar no botão "Jogar" onde dará ínicio ao jogo. Na tela do jogo estarão disponiveis a pontuação, tempo e o nivel. Caso você não consiga vencer o terá que repeti-lo novamente até vencer. No ranking terá a colocação e pontuação de todos os jogadores cadastrados.</string>
+    <string name="comoJogar">Após entrar através de login pelo Facebook ou Google
+                            você irá clicar no botão "Jogar" onde dará ínicio ao jogo.
+                            Na tela do jogo estarão disponiveis a pontuação,
+                            tempo e o nivel. Caso você não consiga vencer o terá
+                            que repeti-lo novamente até vencer. No ranking terá a
+                            colocação e pontuação de todos os jogadores cadastrados.</string>
+
+    <!--Criterios de divisibilidade-->
+    <string name="div2">Um número é divisível por 2 quando ele for par.</string>
+    <string name="div3">Um número é divisível por 3 quando a soma de seus algarismos constitui um número múltiplo de TRÊS.</string>
+    <string name="div4">Um número é divisível por 4 quando for par e a metade do último algarismo somado ao penultimo for um número par ou terminar com ZERO nas duas últimas casas.</string>
+    <string name="div5">Um número é divisível por 5 quando terminar em ZERO ou CINCO.</string>
+    <string name="div6">Um número é divisível por 6 quando for divisível por DOIS e TRÊS.</string>
+    <string name="div7">Um número é divisível por 7 quando a diferença entre o dobro do último e os demais algarismos for divisível por SETE.</string>
+    <string name="div8">Um número é divisível por 8 quando terminar em 000 ou os últimos três números são divisíveis por OITO.</string>
+    <string name="div9">Um número é divisível por 9 quando a soma de seus algarismos constitui um número múltiplo de NOVE.</string>
+    <string name="div10">Um número é divisível por 10 quando terminar em ZERO.</string>
+    <string name="div11">Um número é divisível por 11 quando a diferença entre o último algarismo e os demais, de forma sucessiva até restar apenas DOIS algarismos, for múltiplo de ONZE.</string>
+    <string name="div12">Um número é divisível por 12 quando for divisível por TRÊS e QUATRO.</string>
+
+    <!--Exemplos-->
+    <string name="ex2_1">27 -> 7</string>
+    <string name="ex2_2">50 -> 0</string>
+    <string name="ex2_3">68 -> 8</string>
+    <string name="ex3_1">51 -> 5 + 1 = 6</string>
+    <string name="ex3_2">73 -> 7 + 3 = 10</string>
+    <string name="ex3_3">84 -> 8 + 4 = 12</string>
+    <string name="ex4_1">94 -> 9 + (4/2) = 11</string>
+    <string name="ex4_2">88 -> 8 + (8/2) = 12</string>
+    <string name="ex4_3">52 -> 5 + (2/2) = 6</string>
+    <string name="ex5_1">23 -> 3</string>
+    <string name="ex5_2">35 -> 5</string>
+    <string name="ex5_3">90 -> 0</string>
+    <string name="ex6_1">52 -> 2 (S) || 5 + 2 = 7 (N)</string>
+    <string name="ex6_2">57 -> 7 (N) || 5 + 7 = 12 (S)</string>
+    <string name="ex6_3">96 -> 6 (S) || 9 + 6 = 15 (S)</string>
+    <string name="ex7_1">85 -> 8 - (2x5) = -2</string>
+    <string name="ex7_2">91 -> 9 - (2x1) = 7</string>
+    <string name="ex7_3">77 -> 7 - (2x7) = -7</string>
+    <string name="ex8_1"></string>
+    <string name="ex8_2"></string>
+    <string name="ex8_3"></string>
+    <string name="ex9_1"></string>
+    <string name="ex9_2"></string>
+    <string name="ex9_3"></string>
+    <string name="ex10_1"></string>
+    <string name="ex10_2"></string>
+    <string name="ex10_3"></string>
+    <string name="ex11_1"></string>
+    <string name="ex11_2"></string>
+    <string name="ex11_3"></string>
+    <string name="ex12_1"></string>
+    <string name="ex12_2"></string>
+    <string name="ex12_3"></string>
 </resources>
