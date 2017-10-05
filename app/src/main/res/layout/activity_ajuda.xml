@@ -76,20 +76,12 @@
 
     </LinearLayout>
 
-    <RelativeLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/comoJogar"
         android:layout_below="@+id/interação"
-        android:layout_marginTop="10dp"
-        android:id="@+id/relativeLayoutAjuda">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/comoJogar"
-            android:layout_margin="20dp"
-            android:textSize="20dp" />
-
-    </RelativeLayout>
+        android:layout_margin="20dp"
+        android:textSize="20dp" />
 
 </RelativeLayout>

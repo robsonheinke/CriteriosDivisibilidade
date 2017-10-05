@@ -43,19 +43,25 @@
         </activity>
         <activity
             android:name=".activity.JogoActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.PassarNivelActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.RepetirNivelActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.RankingActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.AjudaActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CriterioEspecificoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CriteriosGeraisActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

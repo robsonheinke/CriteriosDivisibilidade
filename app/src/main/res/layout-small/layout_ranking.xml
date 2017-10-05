@@ -12,7 +12,7 @@
         android:layout_marginTop="5dp"
         android:id="@+id/AdaptPos"
         android:text="POS"
-        android:textSize="10dp"
+        android:textSize="8dp"
         android:textStyle="bold"
         android:textAlignment="center" />
 
@@ -20,6 +20,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
         android:id="@+id/AdaptImagem"
         android:src="@drawable/logocomfundo"/>
 
@@ -29,7 +30,7 @@
         android:text="USUARIO"
         android:layout_marginTop="5dp"
         android:id="@+id/AdaptNome"
-        android:textSize="10dp"
+        android:textSize="8dp"
         android:textStyle="bold"
         android:textAlignment="center" />
 
@@ -39,7 +40,7 @@
         android:text="NIVEL"
         android:layout_marginTop="5dp"
         android:id="@+id/AdaptNivel"
-        android:textSize="10dp"
+        android:textSize="8dp"
         android:textStyle="bold"
         android:textAlignment="center" />
 
@@ -49,7 +50,7 @@
         android:layout_marginTop="5dp"
         android:text="PONTOS"
         android:id="@+id/AdaptPontos"
-        android:textSize="10dp"
+        android:textSize="8dp"
         android:textStyle="bold"
         android:textAlignment="center"/>
 

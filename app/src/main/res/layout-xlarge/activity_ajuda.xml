@@ -43,33 +43,37 @@
         android:layout_height="wrap_content"
         android:background="@drawable/fundo_cabecalho_ajuda"
         android:layout_below="@+id/cabecalho"
-        android:id="@+id/interação">
+        android:id="@+id/interação"
+        android:padding="10dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/livros"
             android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="30dp"/>
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:text="Como Jogar"
+            android:textSize="25dp"
             android:textAllCaps="false"
             android:layout_marginTop="8dp"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/regras"
-            android:layout_marginLeft="50dp"/>
+            android:layout_marginLeft="100dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Criterios de\ndivisibilidade"
             android:textAllCaps="false"
+            android:textSize="25dp"
+            android:layout_marginTop="-5dp"
             android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
@@ -86,7 +90,7 @@
             android:layout_height="wrap_content"
             android:text="@string/comoJogar"
             android:layout_margin="20dp"
-            android:textSize="20dp" />
+            android:textSize="35dp" />
 
     </RelativeLayout>
 

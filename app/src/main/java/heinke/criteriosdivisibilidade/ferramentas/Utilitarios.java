@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import heinke.criteriosdivisibilidade.activity.AjudaActivity;
+import heinke.criteriosdivisibilidade.activity.CriteriosGeraisActivity;
 import heinke.criteriosdivisibilidade.activity.JogoActivity;
 import heinke.criteriosdivisibilidade.activity.MenuPrincipal;
 import heinke.criteriosdivisibilidade.activity.PassarNivelActivity;
@@ -74,6 +75,9 @@ public class Utilitarios extends AppCompatActivity {
                 break;
             case 6:
                 intent = new Intent(context,AjudaActivity.class);
+                break;
+            case 7:
+                intent = new Intent(context, CriteriosGeraisActivity.class);
                 break;
         }
         intent.putExtra("Usuario", usuario);

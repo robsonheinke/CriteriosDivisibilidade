@@ -68,7 +68,19 @@ public class PassarNivelActivity extends Utilitarios implements View.OnClickList
         auxPontos += Integer.parseInt(usuario.getPontos());
         pontos.setText(""+auxPontos);
 
-        usuario.setPontos(String.valueOf(auxPontos));
+        if(auxPontos < 10){
+            usuario.setPontos("000"+String.valueOf(auxPontos));
+        }
+        else if(auxPontos < 100){
+            usuario.setPontos("00"+String.valueOf(auxPontos));
+        }
+        else if(auxPontos < 1000){
+            usuario.setPontos("0"+String.valueOf(auxPontos));
+        }
+        else{
+            usuario.setPontos(String.valueOf(auxPontos));
+        }
+
         usuario.setNivel(String.valueOf(nivel+1));
 
         db.atualizarUsuario(usuario);

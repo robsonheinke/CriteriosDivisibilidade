@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_telas"
+    tools:context="heinke.criteriosdivisibilidade.activity.CriteriosGeraisActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/cabecalho"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajuda"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:shadowColor="#000"
+            android:shadowDx="20"
+            android:shadowDy="20"
+            android:shadowRadius="12"
+            android:padding="12dp"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            android:id="@+id/logo"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fundo_cabecalho_ajuda"
+        android:layout_below="@+id/cabecalho"
+        android:id="@+id/interação">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/livros"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="50dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Como Jogar"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            android:id="@+id/ajuda"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/regras"
+            android:layout_marginLeft="50dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Criterios de\ndivisibilidade"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            android:textSize="30dp"
+            android:id="@+id/criterios"/>
+
+    </LinearLayout>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="-1dp"
+        android:layout_below="@+id/interação"
         android:id="@+id/tabela">
 
         <TableRow>

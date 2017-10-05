@@ -19,20 +19,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ajuda"
-        android:textSize="70sp"
+        android:textSize="30dp"
         android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="1dp"
         android:shadowColor="#000"
-        android:shadowDx="20"
-        android:shadowDy="20"
-        android:shadowRadius="12"
-        android:padding="12dp"/>
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="10"
+        android:padding="1dp"/>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/logo"
         android:id="@+id/logo"/>
 
@@ -46,31 +46,33 @@
         android:id="@+id/interação">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:src="@drawable/livros"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="5dp"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:text="Como Jogar"
             android:textAllCaps="false"
-            android:layout_marginTop="8dp"/>
+            android:textSize="8dp"
+            android:layout_marginTop="1dp"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:src="@drawable/regras"
-            android:layout_marginLeft="50dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Criterios de\ndivisibilidade"
             android:textAllCaps="false"
-            android:layout_marginBottom="10dp"/>
+            android:textSize="8dp" />
 
     </LinearLayout>
 
@@ -78,15 +80,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/interação"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:id="@+id/relativeLayoutAjuda">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/comoJogar"
-            android:layout_margin="20dp"
-            android:textSize="20dp" />
+            android:layout_margin="1dp"
+            android:textSize="8dp" />
 
     </RelativeLayout>
 

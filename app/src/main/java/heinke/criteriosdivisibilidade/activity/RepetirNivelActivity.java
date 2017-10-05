@@ -39,7 +39,9 @@ public class RepetirNivelActivity extends Utilitarios implements View.OnClickLis
             home.setOnClickListener(this);
         imgUsuario = (ImageView) findViewById(R.id.img_usuarioAN);
         continuar = (Button) findViewById(R.id.continuar);
+            continuar.setOnClickListener(this);
 
+        displayLogin(usuario.getImagem(),this,imgUsuario);
     }
 
     @Override
@@ -53,6 +55,7 @@ public class RepetirNivelActivity extends Utilitarios implements View.OnClickLis
                 break;
         }
     }
+
 
     @Override
     public void onBackPressed(){

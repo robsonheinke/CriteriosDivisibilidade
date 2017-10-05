@@ -45,7 +45,7 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
 
     //uteis para a tela e controle
     private String[] numeros;
-    private int controle, total, criterio;
+    private int controle, total, criterio, erros;
 
     private ImageView fotoUsuario;
 
@@ -101,6 +101,7 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
         numeros = gerarNumeros(criterio);
 
         total = verificaQuantidadeDeNumerosCertos(numeros, criterio);
+        erros = 0;
 
         inicializarValoresBotoes();
     }
@@ -466,7 +467,10 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
                 }
                 break;
         }
-        if(controle == total){
+        if(erros == 5){
+            cronometro.onFinish();
+        }
+        else if(controle == total ){
             fimDoNivel(usuario,(String) tempo.getText(),(String) pontos.getText());
         }
     }
@@ -478,7 +482,10 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
             auxPontos += 10;
             controle++;
         }
-        else auxPontos += -5;
+        else{
+            auxPontos += -5;
+            erros++;
+        }
 
         pontos.setText(Integer.toString(auxPontos));
     }
@@ -491,13 +498,15 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
         somaTotal = aux + (tempoRestante*10);
 
         if(tempoRestante > 0){
-            novaTela(usuario, 3, this, somaTotal);
+                novaTela(usuario, 3, this, somaTotal);
         }
         else{
-            if(controle >= (total*0.7)){
+            if(controle >= (total*0.7) && erros < 5){
+                System.out.println("to no if do else");
                 novaTela(usuario, 3, this, somaTotal);
             }
             else{
+                System.out.println("to no else do else");
                 novaTela(usuario, 4, this, 0);
             }
         }
