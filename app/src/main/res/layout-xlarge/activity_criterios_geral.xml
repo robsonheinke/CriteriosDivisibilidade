@@ -58,6 +58,7 @@
             android:text="Como Jogar"
             android:textAllCaps="false"
             android:layout_marginTop="20dp"
+            android:background="@null"
             android:textSize="30dp"
             android:id="@+id/ajuda"/>
 
@@ -71,6 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Criterios de\ndivisibilidade"
+            android:background="@null"
             android:textAllCaps="false"
             android:layout_marginTop="10dp"
             android:textSize="30dp"

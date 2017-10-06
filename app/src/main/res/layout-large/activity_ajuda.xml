@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:text="Como Jogar"
             android:textAllCaps="false"
+            android:background="@null"
             android:layout_marginTop="8dp"/>
 
         <ImageView
@@ -68,26 +69,27 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:text="Criterios de\ndivisibilidade"
             android:textAllCaps="false"
             android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/interação"
-        android:layout_marginTop="10dp"
-        android:id="@+id/relativeLayoutAjuda">
+        android:layout_below="@+id/interação">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/comoJogar"
+            android:layout_below="@+id/interação"
             android:layout_margin="20dp"
+            android:textAlignment="textStart"
             android:textSize="20dp" />
 
-    </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

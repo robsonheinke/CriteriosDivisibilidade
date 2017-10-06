@@ -502,11 +502,9 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
         }
         else{
             if(controle >= (total*0.7) && erros < 5){
-                System.out.println("to no if do else");
                 novaTela(usuario, 3, this, somaTotal);
             }
             else{
-                System.out.println("to no else do else");
                 novaTela(usuario, 4, this, 0);
             }
         }

@@ -16,12 +16,17 @@
     <string name="perdeu">Tempo Esgotado!\nInfelizmente não deu.</string>
     <string name="contPerder">Tente outra vez</string>
 
-    <string name="comoJogar">Após entrar através de login pelo Facebook ou Google
-                            você irá clicar no botão "Jogar" onde dará ínicio ao jogo.
-                            Na tela do jogo estarão disponiveis a pontuação,
-                            tempo e o nivel. Caso você não consiga vencer o terá
-                            que repeti-lo novamente até vencer. No ranking terá a
-                            colocação e pontuação de todos os jogadores cadastrados.</string>
+    <string name="comoJogar">
+        1. Por meio do login de cadastro, o usuário concorda em participar do jogo e autoriza que sejam armazenados seus dados de cadastro, porém, ficando público aos demais jogadores apenas seu nome, foto (caso houver) e pontuações alcançadas no referido jogo – sendo essas autorizações informadas e concedidas no momento em que o aplicativo é salvo na mídia escolhida pelo usuário;
+\n2. Cada nível contará com um tempo pré-determinado para sua realização, mediante análise de tempo hábil e complexidade da questão;
+\n3. A cada início de novo nível a pontuação é iniciada do zero (na tela), onde o participante irá contrair ou subtrair pontos neste mesmo nível, porém, sem comprometer sua pontuação total já adquirida nos demais nível; desta forma, o participante não perderá pontos já adquiridos em jogadas anteriores, objetivando não desmotivar a jogar. Portanto, a cada término de nível o score obtido somasse a sua pontuação total;
+\n4. A cada acerto, o usuário ganhará 10 pontos e a cada erro perderá 5 pontos, sendo que ao errar 5 vezes terá que repetir o novamente o nível. Após conclusão da tarefa, o tempo restante será multiplicado por 10 e somado à pontuação final;
+\n5. A pontuação ao chegar à zero, tanto na pontuação final ou na pontuação do nível, não há o que subtrair-se, deste modo, não há pontuações negativas, permanecendo em zero, mesmo ocorrendo erros de seleção de números;
+\n6. Não há uma quantidade pré-determinada de números corretos apresentados no jogo, ou seja, em cada nível pode haver mais ou menos números corretos para o usuário selecionar, não sendo uma quantidade padrão;
+\n7. São duas regras para avançar de nível:
+\na) Antes do tempo acabar: O usuário deverá acertar todos os números corretos do nível, avançando de nível e ainda obtendo pontos proporcionais ao tempo restante;
+\nb) Quando o tempo se esgotar: Se o usuário acertar no mínimo 70% (setenta porcento) do total de números corretos no momento em que o tempo se esgotar, ela avança de nível, porém, não recebe pontuação por tempo. Ex.: Se a questão tiver 10 números corretos, dentre os 20 apresentados, o usuário terá a possibilidade de avançar de nível se ele selecionou 7 números corretamente até o tempo se esgotar.
+    </string>
 
     <!--Criterios de divisibilidade-->
     <string name="div2">Um número é divisível por 2 quando ele for par.</string>
@@ -40,34 +45,35 @@
     <string name="ex2_1">27 -> 7</string>
     <string name="ex2_2">50 -> 0</string>
     <string name="ex2_3">68 -> 8</string>
-    <string name="ex3_1">51 -> 5 + 1 = 6</string>
-    <string name="ex3_2">73 -> 7 + 3 = 10</string>
-    <string name="ex3_3">84 -> 8 + 4 = 12</string>
-    <string name="ex4_1">94 -> 9 + (4/2) = 11</string>
-    <string name="ex4_2">88 -> 8 + (8/2) = 12</string>
-    <string name="ex4_3">52 -> 5 + (2/2) = 6</string>
+    <string name="ex3_1">51 -> 5+1= 6</string>
+    <string name="ex3_2">73 -> 7+3= 10</string>
+    <string name="ex3_3">84 -> 8+4= 12</string>
+    <string name="ex4_1">94 -> 9+(4/2)= 11</string>
+    <string name="ex4_2">88 -> 8+(8/2)= 12</string>
+    <string name="ex4_3">52 -> 5+(2/2)= 6</string>
     <string name="ex5_1">23 -> 3</string>
     <string name="ex5_2">35 -> 5</string>
     <string name="ex5_3">90 -> 0</string>
-    <string name="ex6_1">52 -> 2 (S) || 5 + 2 = 7 (N)</string>
-    <string name="ex6_2">57 -> 7 (N) || 5 + 7 = 12 (S)</string>
-    <string name="ex6_3">96 -> 6 (S) || 9 + 6 = 15 (S)</string>
-    <string name="ex7_1">85 -> 8 - (2x5) = -2</string>
-    <string name="ex7_2">91 -> 9 - (2x1) = 7</string>
-    <string name="ex7_3">77 -> 7 - (2x7) = -7</string>
-    <string name="ex8_1"></string>
-    <string name="ex8_2"></string>
-    <string name="ex8_3"></string>
-    <string name="ex9_1"></string>
-    <string name="ex9_2"></string>
-    <string name="ex9_3"></string>
-    <string name="ex10_1"></string>
-    <string name="ex10_2"></string>
-    <string name="ex10_3"></string>
-    <string name="ex11_1"></string>
-    <string name="ex11_2"></string>
-    <string name="ex11_3"></string>
-    <string name="ex12_1"></string>
-    <string name="ex12_2"></string>
-    <string name="ex12_3"></string>
+    <string name="ex6_1">52 -> &#160;2(S)\n 5+2=7(N)</string>
+    <string name="ex6_2">57 -> &#160;7(N)\n 5+7=12(S)</string>
+    <string name="ex6_3">96 -> &#160;6(S)\n 9+6=15(S)</string>
+    <string name="ex7_1">85 -> 8-(2x5)=-2</string>
+    <string name="ex7_2">91 -> 9-(2x1)=7</string>
+    <string name="ex7_3">77 -> 7-(2x7)=-7</string>
+    <string name="ex8_1">1000 -> 000</string>
+    <string name="ex8_2">1160 -> 160</string>
+    <string name="ex8_3">1138 -> 138</string>
+    <string name="ex9_1">72 -> 7+2=9</string>
+    <string name="ex9_2">63 -> 6+3=9</string>
+    <string name="ex9_3">55 -> 5+5=10</string>
+    <string name="ex10_1">20 -> 0</string>
+    <string name="ex10_2">80 -> 0</string>
+    <string name="ex10_3">91 -> 1</string>
+    <string name="ex11_1">121 -> 12-1=11</string>
+    <string name="ex11_2">111 -> 11-1=10</string>
+    <string name="ex11_3">132 -> 13-2=11</string>
+    <string name="ex12_1">88 ->\t 8+8=16(N)\n&#160;&#160;&#160;&#160;8+(8/2)=12(S)</string>
+    <string name="ex12_2">96 ->\t 9+6=15(S)\n&#160;&#160;&#160;&#160;9+(6/2)=12(S)</string>
+    <string name="ex12_3">42 ->\t 4+2=6 (S)\n&#160;&#160;&#160;&#160;4+(2/2)=5 (N)</string>
+    
 </resources>

@@ -108,15 +108,16 @@ public class CriteriosGeraisActivity extends Utilitarios implements View.OnClick
     }
 
     public void telaCriterioIndividual(Usuario user, int criterio){
-        Intent intent = new Intent(this, CriterioEspecificoActivity.class);
+        Intent intent = new Intent(this, CriteriosIndividualActivity.class);
         intent.putExtra("Usuario", usuario);
         intent.putExtra("Criterio",criterio);
         startActivity(intent);
     }
+
     @Override
     public void onBackPressed(){
         super.onBackPressed();
-        novaTela(usuario,1,this,0);
+        novaTela(usuario,6,this,0);
         finish();
     }
 

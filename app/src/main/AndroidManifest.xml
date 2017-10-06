@@ -57,12 +57,11 @@
             android:name=".activity.AjudaActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.CriterioEspecificoActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.CriteriosGeraisActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.CriteriosIndividualActivity"></activity>
+        <activity
+            android:name=".activity.CriteriosIndividualActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

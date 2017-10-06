@@ -56,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Como Jogar"
+            android:background="@null"
             android:textAllCaps="false"
             android:textSize="20dp"
             android:layout_marginTop="8dp"
@@ -70,6 +71,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@null"
             android:text="Criterios de\ndivisibilidade"
             android:textAllCaps="false"
             android:textSize="20dp"

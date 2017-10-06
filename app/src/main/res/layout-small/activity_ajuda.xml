@@ -58,6 +58,7 @@
             android:text="Como Jogar"
             android:textAllCaps="false"
             android:textSize="8dp"
+            android:background="@null"
             android:layout_marginTop="1dp"/>
 
         <ImageView
@@ -72,24 +73,25 @@
             android:layout_height="wrap_content"
             android:text="Criterios de\ndivisibilidade"
             android:textAllCaps="false"
+            android:background="@null"
             android:textSize="8dp" />
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/interação"
-        android:layout_marginTop="5dp"
-        android:id="@+id/relativeLayoutAjuda">
+        android:layout_below="@+id/interação">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/comoJogar"
-            android:layout_margin="1dp"
+            android:layout_below="@+id/interação"
+            android:layout_margin="2dp"
+            android:textAlignment="textStart"
             android:textSize="8dp" />
 
-    </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
