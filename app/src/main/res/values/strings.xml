@@ -21,9 +21,8 @@
 \n2. Cada nível contará com um tempo pré-determinado para sua realização, mediante análise de tempo hábil e complexidade da questão;
 \n3. A cada início de novo nível a pontuação é iniciada do zero (na tela), onde o participante irá contrair ou subtrair pontos neste mesmo nível, porém, sem comprometer sua pontuação total já adquirida nos demais nível; desta forma, o participante não perderá pontos já adquiridos em jogadas anteriores, objetivando não desmotivar a jogar. Portanto, a cada término de nível o score obtido somasse a sua pontuação total;
 \n4. A cada acerto, o usuário ganhará 10 pontos e a cada erro perderá 5 pontos, sendo que ao errar 5 vezes terá que repetir o novamente o nível. Após conclusão da tarefa, o tempo restante será multiplicado por 10 e somado à pontuação final;
-\n5. A pontuação ao chegar à zero, tanto na pontuação final ou na pontuação do nível, não há o que subtrair-se, deste modo, não há pontuações negativas, permanecendo em zero, mesmo ocorrendo erros de seleção de números;
-\n6. Não há uma quantidade pré-determinada de números corretos apresentados no jogo, ou seja, em cada nível pode haver mais ou menos números corretos para o usuário selecionar, não sendo uma quantidade padrão;
-\n7. São duas regras para avançar de nível:
+\n5. Não há uma quantidade pré-determinada de números corretos apresentados no jogo, ou seja, em cada nível pode haver mais ou menos números corretos para o usuário selecionar, não sendo uma quantidade padrão;
+\n6. São duas regras para avançar de nível:
 \na) Antes do tempo acabar: O usuário deverá acertar todos os números corretos do nível, avançando de nível e ainda obtendo pontos proporcionais ao tempo restante;
 \nb) Quando o tempo se esgotar: Se o usuário acertar no mínimo 70% (setenta porcento) do total de números corretos no momento em que o tempo se esgotar, ela avança de nível, porém, não recebe pontuação por tempo. Ex.: Se a questão tiver 10 números corretos, dentre os 20 apresentados, o usuário terá a possibilidade de avançar de nível se ele selecionou 7 números corretamente até o tempo se esgotar.
     </string>
