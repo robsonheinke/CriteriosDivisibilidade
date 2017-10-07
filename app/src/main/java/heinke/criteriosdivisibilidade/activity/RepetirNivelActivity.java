@@ -15,7 +15,7 @@ import heinke.criteriosdivisibilidade.model.Usuario;
 
 public class RepetirNivelActivity extends Utilitarios implements View.OnClickListener {
 
-    private TextView pontos;
+    private TextView pontos, cabecalho;
     private ImageButton home;
     private ImageView imgUsuario;
     private Button continuar;
@@ -32,7 +32,7 @@ public class RepetirNivelActivity extends Utilitarios implements View.OnClickLis
 
         Intent intent = getIntent();
         usuario = (Usuario) intent.getSerializableExtra("Usuario");
-
+        int aux = intent.getIntExtra("pontos", 0);
         pontos = (TextView) findViewById(R.id.pontosAN);
             pontos.setText(usuario.getPontos());
         home = (ImageButton) findViewById(R.id.mHome);
@@ -40,6 +40,15 @@ public class RepetirNivelActivity extends Utilitarios implements View.OnClickLis
         imgUsuario = (ImageView) findViewById(R.id.img_usuarioAN);
         continuar = (Button) findViewById(R.id.continuar);
             continuar.setOnClickListener(this);
+
+        cabecalho = (TextView) findViewById(R.id.parabens);
+
+        if(aux == 0){
+            cabecalho.setText(R.string.perdeu);
+        }
+        else{
+            cabecalho.setText(R.string.perdeu2);
+        }
 
         displayLogin(usuario.getImagem(),this,imgUsuario);
     }

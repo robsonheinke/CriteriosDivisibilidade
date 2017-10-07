@@ -505,7 +505,12 @@ public class JogoActivity extends Utilitarios implements View.OnClickListener {
                 novaTela(usuario, 3, this, somaTotal);
             }
             else{
-                novaTela(usuario, 4, this, 0);
+                if(erros == 5){
+                    novaTela(usuario, 4, this, -1);
+                }
+                else{
+                    novaTela(usuario, 4, this, 0);
+                }
             }
         }
     }

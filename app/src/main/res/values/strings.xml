@@ -14,6 +14,7 @@
     <string name="continuar">Continue suas conquistas</string>
     <string name="parabens">Parabéns\nVocê completou o nível </string>
     <string name="perdeu">Tempo Esgotado!\nInfelizmente não deu.</string>
+    <string name="perdeu2">Você errou 5 vezes!\nInfelizmente não deu.</string>
     <string name="contPerder">Tente outra vez</string>
 
     <string name="comoJogar">
@@ -74,5 +75,5 @@
     <string name="ex12_1">88 ->\t 8+8=16(N)\n&#160;&#160;&#160;&#160;8+(8/2)=12(S)</string>
     <string name="ex12_2">96 ->\t 9+6=15(S)\n&#160;&#160;&#160;&#160;9+(6/2)=12(S)</string>
     <string name="ex12_3">42 ->\t 4+2=6 (S)\n&#160;&#160;&#160;&#160;4+(2/2)=5 (N)</string>
-    
+
 </resources>

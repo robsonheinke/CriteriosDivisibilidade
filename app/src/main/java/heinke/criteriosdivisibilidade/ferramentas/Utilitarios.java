@@ -63,12 +63,13 @@ public class Utilitarios extends AppCompatActivity {
             case 2:     //menu principal para tela de jogo
                 intent = new Intent(context, JogoActivity.class);
                 break;
-            case 3:     //menu principal para tela de ranking
+            case 3:     //menu principal para tela de passar nivel
                 intent = new Intent(context, PassarNivelActivity.class);
                 intent.putExtra("pontos",pontos);
                 break;
-            case 4:     //menu principal para tela de ajuda
+            case 4:     //menu principal para tela de repetir nivel
                 intent = new Intent(context, RepetirNivelActivity.class);
+                intent.putExtra("pontos",pontos);
                 break;
             case 5:     //menu principal para tela de ranking
                 intent = new Intent(context, RankingActivity.class);
