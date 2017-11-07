@@ -1,5 +1,7 @@
 package heinke.criteriosdivisibilidade.model;
 
+import java.util.ArrayList;
+
 import heinke.criteriosdivisibilidade.ferramentas.Utilitarios;
 
 /**
@@ -13,12 +15,12 @@ public class Formulario {
     private String estrutura;
     private String recursos;
     private String dificuldade;
-    private String criterioDificuldade;
+    private ArrayList<String> criterioDificuldade;
     private String enfoque;
     private String beneficiaUsuario;
-    private String publico;
     private String recomendaria;
     private String sugestao;
+    private String idUsuario;
 
     public String getEscolaridade() {
         return escolaridade;
@@ -68,11 +70,11 @@ public class Formulario {
         this.dificuldade = dificuldade;
     }
 
-    public String getCriterioDificuldade() {
+    public ArrayList<String> getCriterioDificuldade() {
         return criterioDificuldade;
     }
 
-    public void setCriterioDificuldade(String criterioDificuldade) {
+    public void setCriterioDificuldade(ArrayList<String> criterioDificuldade) {
         this.criterioDificuldade = criterioDificuldade;
     }
 
@@ -92,14 +94,6 @@ public class Formulario {
         this.beneficiaUsuario = beneficiaUsuario;
     }
 
-    public String getPublico() {
-        return publico;
-    }
-
-    public void setPublico(String publico) {
-        this.publico = publico;
-    }
-
     public String getRecomendaria() {
         return recomendaria;
     }
@@ -114,5 +108,41 @@ public class Formulario {
 
     public void setSugestao(String sugestao) {
         this.sugestao = sugestao;
+    }
+
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    @Override
+    public String toString(){
+        String string = "ID: " + this.idUsuario + "\n" +
+                "ESCOLARIDADE: " + this.escolaridade + "\n" +
+                "APARENCIA: "+ this.aparencia + "\n" +
+                "USABILIDADE: " + this.usabilidade + "\n" +
+                "ESTRUTURA: " + this.estrutura + "\n" +
+                "RECURSOS: " + this.recursos + "\n" +
+                "DIFICULDADE: " + this.dificuldade + "\n" +
+                "NIVEL: ";
+        int size = this.criterioDificuldade.size() - 1;
+        int i = 0;
+        for(String a: this.criterioDificuldade){
+            if(i == size){
+                string += a;
+            }
+            else{
+                string += (a + ",");
+            }
+            i++;
+        }
+        string += "\nENFOQUE: " + this.enfoque + "\n" +
+                "BENEFICIA USUARIO: " + this.beneficiaUsuario + "\n" +
+                "RECOMENDARIA: " + this.recomendaria + "\n" +
+                "SUGESTAO: " + this.sugestao;
+        return string;
     }
 }

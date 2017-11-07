@@ -15,6 +15,7 @@ public class Usuario implements Serializable {
     private String idSQl;
     private String idFirebase;
     private String nivel;
+    private String pesquisa = "false";
 
     public Usuario(){}
 
@@ -26,6 +27,17 @@ public class Usuario implements Serializable {
         this.idFirebase = firebase;
         this.pontos = _pontos;
         this.nivel = _nivel;
+    }
+
+    public Usuario(String idSQl, String idFirebase, String nome, String email, String imagem, String nivel, String pontos, String pesquisa) {
+        this.nome = nome;
+        this.email = email;
+        this.imagem = imagem;
+        this.pontos = pontos;
+        this.idSQl = idSQl;
+        this.idFirebase = idFirebase;
+        this.nivel = nivel;
+        this.pesquisa = pesquisa;
     }
 
     public Usuario(String firebase, String _nome, String _email, String _imagem, String _nivel, String _pontos) {
@@ -98,6 +110,14 @@ public class Usuario implements Serializable {
 
     public void setNivel(String nivel) {
         this.nivel = nivel;
+    }
+
+    public String getPesquisa() {
+        return pesquisa;
+    }
+
+    public void setPesquisa(String pesquisa) {
+        this.pesquisa = pesquisa;
     }
 
     public String toString(){

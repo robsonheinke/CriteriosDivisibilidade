@@ -1,8 +1,6 @@
 package heinke.criteriosdivisibilidade.repositorio;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.widget.TableLayout;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -10,12 +8,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
+import heinke.criteriosdivisibilidade.model.Formulario;
 import heinke.criteriosdivisibilidade.model.Usuario;
 
 /**
@@ -37,6 +30,10 @@ public class Database_Firebase {
         databaseReference.child("Usuario").child(usuario.getIdFirebase()).setValue(usuario);
     }
 
+    public void salvarFormulario(Formulario formulario){
+        DatabaseReference databaseReference = database.getReference();
+        databaseReference.child("Formulario").child(formulario.getIdUsuario()).setValue(formulario);
+    }
 
     public void pesquisarUsuarios(final Context context){
         DatabaseReference databaseReference = database.getReference();

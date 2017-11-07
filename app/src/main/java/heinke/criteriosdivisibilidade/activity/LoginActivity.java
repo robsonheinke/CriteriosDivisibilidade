@@ -199,7 +199,6 @@ public class LoginActivity extends Utilitarios implements View.OnClickListener
 
     private void login(FirebaseUser firebaseUser) {
         Database_Firebase db_firebase = new Database_Firebase();
-        db_firebase.pesquisarUsuarios(this);
 
         if (firebaseUser != null) {
             String nome = firebaseUser.getDisplayName();
@@ -209,7 +208,8 @@ public class LoginActivity extends Utilitarios implements View.OnClickListener
 
             if (db.contarUsuarioPorId(idFirebase) == 1) {
                 usuario = db.pesquisaUsuarioIdFirebase(new Usuario(idFirebase, nome, email, imagem));
-            } else {
+            }
+            else {
                 usuario = new Usuario(idFirebase, nome, email, imagem,"1","0");
                 db.adicionarUsuario(usuario);
             }

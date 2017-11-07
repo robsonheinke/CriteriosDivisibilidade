@@ -32,12 +32,12 @@
     <string name="div2">Um número é divisível por 2 quando ele for par.</string>
     <string name="div3">Um número é divisível por 3 quando a soma de seus algarismos constitui um número múltiplo de TRÊS.</string>
     <string name="div4">Um número é divisível por 4 quando for par e a metade do último algarismo somado ao penultimo for um número par ou terminar com ZERO nas duas últimas casas.</string>
-    <string name="div5">Um número é divisível por 5 quando terminar em ZERO ou CINCO.</string>
+    <string name="div5">Um número é divisível por 5 quando o algarismo da unidade terminar em ZERO ou CINCO.</string>
     <string name="div6">Um número é divisível por 6 quando for divisível por DOIS e TRÊS.</string>
     <string name="div7">Um número é divisível por 7 quando a diferença entre o dobro do último e os demais algarismos for divisível por SETE.</string>
     <string name="div8">Um número é divisível por 8 quando terminar em 000 ou os últimos três números são divisíveis por OITO.</string>
     <string name="div9">Um número é divisível por 9 quando a soma de seus algarismos constitui um número múltiplo de NOVE.</string>
-    <string name="div10">Um número é divisível por 10 quando terminar em ZERO.</string>
+    <string name="div10">Um número é divisível por 10 quando o algarismo da unidade terminar em ZERO.</string>
     <string name="div11">Um número é divisível por 11 quando a diferença entre o último algarismo e os demais, de forma sucessiva até restar apenas DOIS algarismos, for múltiplo de ONZE.</string>
     <string name="div12">Um número é divisível por 12 quando for divisível por TRÊS e QUATRO.</string>
 
@@ -75,5 +75,10 @@
     <string name="ex12_1">88 ->\t 8+8=16(N)\n&#160;&#160;&#160;&#160;8+(8/2)=12(S)</string>
     <string name="ex12_2">96 ->\t 9+6=15(S)\n&#160;&#160;&#160;&#160;9+(6/2)=12(S)</string>
     <string name="ex12_3">42 ->\t 4+2=6 (S)\n&#160;&#160;&#160;&#160;4+(2/2)=5 (N)</string>
+
+    <string name="agradecimento">Você concluiu o jogo “Critérios de Divisibilidade” – Versão Beta!\nParabéns!\n
+                                Essa é uma versão de teste no qual tem por intuito avaliar aspectos positivos e negativos do jogo em busca de feedbacks construtivos para o aperfeiçoamento do mesmo.
+                                Agradecemos sua participação e gostaríamos de convidá-lo a avaliar o jogo, de forma a, agregar valor às futuras atualizações do mesmo. Através de sua avaliação poderemos qualificá-lo da melhor maneira possível para que assim, possa oferecer sempre a melhor experiência ao usuário.
+    </string>
 
 </resources>

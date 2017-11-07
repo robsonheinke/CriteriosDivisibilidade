@@ -128,7 +128,12 @@ public class PassarNivelActivity extends Utilitarios implements View.OnClickList
                 break;
             case R.id.continuar:
                 dbFirebase.salvarUsuario(usuario);
-                novaTela(usuario,2,this,0);
+                if(usuario.getNivel() == "12"){
+                    novaTela(usuario,8,this,0);
+                }
+                else {
+                    novaTela(usuario,2,this,0);
+                }
                 break;
         }
     }

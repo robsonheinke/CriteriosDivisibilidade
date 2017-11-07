@@ -17,7 +17,6 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import java.util.ArrayList;
 
 import heinke.criteriosdivisibilidade.R;
-import heinke.criteriosdivisibilidade.ferramentas.Utilitarios;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
 
@@ -40,7 +39,6 @@ public class ListaRanking extends ArrayAdapter<Ranking> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Ranking ranking = this.listaRanking.get(position);
-        Utilitarios util = new Utilitarios();
         convertView = LayoutInflater.from(this.context).inflate(R.layout.layout_ranking,null);
 
         TextView posicao, nome, nivel, pontos;

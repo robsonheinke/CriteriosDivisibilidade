@@ -19,18 +19,17 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/fb_img"
-            android:src="@drawable/logo"
+            android:background="@drawable/logo"
             android:layout_margin="10dp"
             />
 
         <TextView
+            android:id="@+id/nome_usuario"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:textSize="20dp"
             android:layout_gravity="center_vertical"
-            android:id="@+id/nome_usuario"
             android:text="nomeUsuario"
-            />
+            android:textSize="20dp" />
 
     </LinearLayout>
 

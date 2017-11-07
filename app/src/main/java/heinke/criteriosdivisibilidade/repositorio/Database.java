@@ -32,6 +32,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String COLUNA_ID = "id";
     private static final String COLUNA_IDFIREBASE = "id_firebase";
     private static final String COLUNA_NIVEL = "nivel";
+    private static final String COLUNA_PESQUISA = "pesquisa";
     private static final String COLUNA_ORDEM = "ordem";
     private static final String COLUNA_POSICAO_BOTAO = "posicao";
     private static final String COLUNA_CRITERIO = "criterio";
@@ -78,7 +79,8 @@ public class Database extends SQLiteOpenHelper {
                 + COLUNA_IMAGEM + " TEXT, "
                 + COLUNA_NIVEL + " INTEGER, "
                 + COLUNA_PONTOS + " TEXT, "
-                + COLUNA_IDFIREBASE + " TEXT)";
+                + COLUNA_IDFIREBASE + " TEXT, "
+                + COLUNA_PESQUISA + " TEXT )";
     }
 
     private String createTableNivel(){
@@ -162,6 +164,7 @@ public class Database extends SQLiteOpenHelper {
         valores.put(COLUNA_NIVEL, usuario.getNivel() == null ? 1 : Integer.parseInt(usuario.getNivel()));
         valores.put(COLUNA_PONTOS, usuario.getPontos());
         valores.put(COLUNA_IDFIREBASE,usuario.getIdFirebase());
+        valores.put(COLUNA_PESQUISA,usuario.getPesquisa());
 
         db.insert(TABELA_USUARIO,null, valores);
 
@@ -179,6 +182,7 @@ public class Database extends SQLiteOpenHelper {
         valores.put(COLUNA_NIVEL, usuario.getNivel() == null ? 1 : Integer.parseInt(usuario.getNivel()));
         valores.put(COLUNA_PONTOS, usuario.getPontos());
         valores.put(COLUNA_IDFIREBASE,usuario.getIdFirebase());
+        valores.put(COLUNA_PESQUISA,usuario.getPesquisa());
 
         db.update(TABELA_USUARIO,valores, COLUNA_IDFIREBASE + "= ?", new String[]{usuario.getIdFirebase()});
         db.close();
@@ -203,7 +207,8 @@ public class Database extends SQLiteOpenHelper {
                                         ,COLUNA_IMAGEM
                                         ,COLUNA_NIVEL
                                         ,COLUNA_PONTOS
-                                        ,COLUNA_IDFIREBASE};
+                                        ,COLUNA_IDFIREBASE
+                                        ,COLUNA_PESQUISA};
 
         Cursor cursor = db.query(TABELA_USUARIO,colunas,COLUNA_IDFIREBASE + "='" + usuario.getIdFirebase() + "'",null,null,null,null);
 
@@ -216,7 +221,8 @@ public class Database extends SQLiteOpenHelper {
                                        ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_EMAIL))
                                        ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_IMAGEM))
                                        ,String.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(COLUNA_NIVEL)))
-                                       ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_PONTOS)));
+                                       ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_PONTOS))
+                                       ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_PESQUISA)));
         return usuario1;
     }
 
@@ -255,9 +261,43 @@ public class Database extends SQLiteOpenHelper {
                                            ,String.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(COLUNA_NIVEL)))
                                            ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_PONTOS)));
             Ranking ranking = new Ranking(usuario,String.valueOf(i));
+            System.out.println(ranking.toString());
             lista.add(ranking);
             i++;
         }
         return lista;
+    }
+
+    public int posicao(Usuario usuario){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String SQL = "SELECT * FROM " + TABELA_USUARIO + " ORDER BY " + COLUNA_PONTOS + " DESC, " + COLUNA_NIVEL + " ASC";
+
+        Cursor cursor = db.rawQuery(SQL, null);
+
+        int i = 1;
+        while(cursor.moveToNext()){
+            Usuario usuario1 = new Usuario(String.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(COLUNA_ID)))
+                    ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_IDFIREBASE))
+                    ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_NOME))
+                    ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_EMAIL))
+                    ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_IMAGEM))
+                    ,String.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(COLUNA_NIVEL)))
+                    ,cursor.getString(cursor.getColumnIndexOrThrow(COLUNA_PONTOS)));
+            if(usuario.getIdFirebase().equals(usuario1.getIdFirebase())){
+                return i;
+            }
+            i++;
+        }
+        return 0;
+    }
+
+    public void deletarUsuarios(String id){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABELA_USUARIO, COLUNA_IDFIREBASE + " <> ?",new String[] {id});
+
+        db.close();
     }
 }

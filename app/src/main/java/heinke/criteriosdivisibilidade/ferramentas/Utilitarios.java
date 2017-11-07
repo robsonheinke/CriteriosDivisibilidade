@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -23,12 +24,17 @@ import java.util.Collections;
 
 import heinke.criteriosdivisibilidade.activity.AjudaActivity;
 import heinke.criteriosdivisibilidade.activity.CriteriosGeraisActivity;
+import heinke.criteriosdivisibilidade.activity.FormularioActivity;
 import heinke.criteriosdivisibilidade.activity.JogoActivity;
+import heinke.criteriosdivisibilidade.activity.LoginActivity;
 import heinke.criteriosdivisibilidade.activity.MenuPrincipal;
 import heinke.criteriosdivisibilidade.activity.PassarNivelActivity;
 import heinke.criteriosdivisibilidade.activity.RankingActivity;
 import heinke.criteriosdivisibilidade.activity.RepetirNivelActivity;
+import heinke.criteriosdivisibilidade.model.Formulario;
 import heinke.criteriosdivisibilidade.model.Usuario;
+import heinke.criteriosdivisibilidade.repositorio.Database;
+import heinke.criteriosdivisibilidade.repositorio.Database_Firebase;
 
 /**
  * Created by heinke on 03/09/17.
@@ -57,21 +63,21 @@ public class Utilitarios extends AppCompatActivity {
     public void novaTela(Usuario usuario, int tela, Context context, int pontos){
         Intent intent = null;
         switch (tela){
-            case 1:     //tela de login para o menu principal
+            case 1:     //menu principal
                 intent = new Intent(context, MenuPrincipal.class);
                 break;
-            case 2:     //menu principal para tela de jogo
+            case 2:     //tela de jogo
                 intent = new Intent(context, JogoActivity.class);
                 break;
-            case 3:     //menu principal para tela de passar nivel
+            case 3:     //tela de passar nivel
                 intent = new Intent(context, PassarNivelActivity.class);
                 intent.putExtra("pontos",pontos);
                 break;
-            case 4:     //menu principal para tela de repetir nivel
+            case 4:     //tela de repetir nivel
                 intent = new Intent(context, RepetirNivelActivity.class);
                 intent.putExtra("pontos",pontos);
                 break;
-            case 5:     //menu principal para tela de ranking
+            case 5:     //tela de ranking
                 intent = new Intent(context, RankingActivity.class);
                 break;
             case 6:
@@ -79,6 +85,12 @@ public class Utilitarios extends AppCompatActivity {
                 break;
             case 7:
                 intent = new Intent(context, CriteriosGeraisActivity.class);
+                break;
+            case 8:
+                intent = new Intent(context, FormularioActivity.class);
+                break;
+            case 9:
+                intent = new Intent(context, LoginActivity.class);
                 break;
         }
         intent.putExtra("Usuario", usuario);

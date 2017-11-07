@@ -14,10 +14,12 @@ import heinke.criteriosdivisibilidade.model.ListaRanking;
 import heinke.criteriosdivisibilidade.model.Ranking;
 import heinke.criteriosdivisibilidade.model.Usuario;
 import heinke.criteriosdivisibilidade.repositorio.Database;
+import heinke.criteriosdivisibilidade.repositorio.Database_Firebase;
 
 public class RankingActivity extends Utilitarios {
 
     private Database db;
+    private Database_Firebase db_firebase;
     private ArrayList<Ranking> ranking;
     private Usuario usuario;
 
@@ -26,6 +28,8 @@ public class RankingActivity extends Utilitarios {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
+        db = new Database(this);
+
         View decorView = getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
 
@@ -33,7 +37,7 @@ public class RankingActivity extends Utilitarios {
         usuario = (Usuario) intent.getSerializableExtra("Usuario");
 
         ListView listView = (ListView) findViewById(R.id.list_item);
-        db = new Database(this);
+
         ranking = db.pesquisarTopDez();
 
         ListaRanking listaRanking = new ListaRanking(this, ranking);
@@ -41,10 +45,10 @@ public class RankingActivity extends Utilitarios {
         listView.setAdapter(listaRanking);
     }
 
-
     @Override
     public void onBackPressed(){
         super.onBackPressed();
+        db.deletarUsuarios(usuario.getIdFirebase());
         novaTela(usuario,1,this,0);
         finish();
     }
@@ -54,5 +58,4 @@ public class RankingActivity extends Utilitarios {
         super.onPause();
         finish();
     }
-
 }

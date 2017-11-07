@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_telas">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/confimacao"
+            android:background="#fff"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:text="texto de confirmação que será passado por variável"
+            android:textSize="20dp"/>
+
+    </ScrollView>
+
+    <View
+        android:background="@color/botaoContinuar"
+        android:layout_width = "match_parent"
+        android:layout_height="2dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="OK"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/ok"
+        android:background="@color/botaoContinuar"/>
+
+</LinearLayout>
